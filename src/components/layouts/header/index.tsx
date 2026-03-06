@@ -1,11 +1,17 @@
+'use client'
+
+import { NavDrawer } from '@/components/ui/drawer/NavDrawer'
 import { Menu } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 import styles from './style.module.scss'
 
 export const Header = () => {
+	const [drawer, setDrawer] = useState(false)
+
 	return (
-		<header className={styles.header}>
+		<header className={`${styles.header} ${drawer ? styles.active : ''}`}>
 			<div className={`container ${styles.header__container}`}>
 				<Link
 					href={'/'}
@@ -79,9 +85,16 @@ export const Header = () => {
 						/>
 					</button>
 				</div>
-				<button className="md:hidden">
+				<button
+					onClick={() => setDrawer(!drawer)}
+					className="md:hidden"
+				>
 					<Menu size={24} />
 				</button>
+				<NavDrawer
+					drawer={drawer}
+					close={() => setDrawer(false)}
+				/>
 			</div>
 		</header>
 	)
