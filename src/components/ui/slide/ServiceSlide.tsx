@@ -7,9 +7,14 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import Image from 'next/image'
 import 'swiper/css'
 
+import { useGetServices } from '@/hooks/api.query'
+import { TLocale } from '@/types'
+import { useLocale } from 'next-intl'
 import './style.scss'
 
 export const ServiceSlide = () => {
+	const { data } = useGetServices()
+	const locale = useLocale() as TLocale
 	return (
 		<div className="relative">
 			<Swiper
@@ -26,18 +31,21 @@ export const ServiceSlide = () => {
 				}}
 				className="service_slide"
 			>
-				{[...Array(6)].map((_, index) => (
+				{data?.map((service, index) => (
 					<SwiperSlide
-						className="relative"
+						className="relative rounded-[10px] overflow-hidden"
 						key={index}
 					>
 						<Image
-							src={'/images/service_image.jpg'}
+							src={service?.image}
 							width={300}
 							height={230}
-							alt="Service image"
-							className="rounded-[10px] w-full"
+							alt={service?.[`title_${locale}`]}
+							className="w-full"
 						/>
+						<div className="absolute left-5 bottom-5 px-2.5 py-1.25 rounded-md bg-primary text-sm leading-none text-white line-clamp-1 w-[calc(100%-40px)]">
+							{service?.[`title_${locale}`]}
+						</div>
 						<div className="bg-black/20 w-full h-full absolute top-0 left-0"></div>
 					</SwiperSlide>
 				))}

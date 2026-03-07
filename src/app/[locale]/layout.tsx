@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { Exo_2 } from 'next/font/google'
+import { ToastContainer } from 'react-toastify'
 import './globals.css'
 
 const exo_2 = Exo_2({
@@ -32,6 +33,7 @@ export default async function RootLayout({
 						<Header />
 						{children}
 						<Footer />
+						<ToastContainer theme="colored" />
 					</QueryProvider>
 				</NextIntlClientProvider>
 			</body>

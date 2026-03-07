@@ -1,5 +1,5 @@
-import { useTranslations } from 'next-intl'
-import Link from 'next/link'
+import { Link, usePathname } from '@/config/i18n/routing'
+import { useLocale, useTranslations } from 'next-intl'
 
 export const NavDrawer = ({
 	drawer,
@@ -9,6 +9,9 @@ export const NavDrawer = ({
 	close: () => void
 }) => {
 	const t = useTranslations('nav')
+	const pathname = usePathname()
+	const locale = useLocale()
+
 	return (
 		<div
 			className={`${drawer ? 'left-0' : 'left-full'} w-full h-screen fixed top-15 left-0 bg-[#171717] duration-300`}
@@ -19,7 +22,7 @@ export const NavDrawer = ({
 						href={'#top'}
 						onClick={close}
 					>
-						{t("home")}
+						{t('home')}
 					</Link>
 				</li>
 				<li>
@@ -27,7 +30,7 @@ export const NavDrawer = ({
 						href={'#service'}
 						onClick={close}
 					>
-						{t("services")}
+						{t('services')}
 					</Link>
 				</li>
 				<li>
@@ -35,7 +38,7 @@ export const NavDrawer = ({
 						href={'#guarantee'}
 						onClick={close}
 					>
-						{t("guarantee")}
+						{t('guarantee')}
 					</Link>
 				</li>
 				<li>
@@ -43,7 +46,7 @@ export const NavDrawer = ({
 						href={'#rewiews'}
 						onClick={close}
 					>
-						{t("reviews")}
+						{t('reviews')}
 					</Link>
 				</li>
 				<li>
@@ -51,10 +54,34 @@ export const NavDrawer = ({
 						href={'#contact'}
 						onClick={close}
 					>
-						{t("contact")}
+						{t('contact')}
 					</Link>
 				</li>
 			</ul>
+
+			<div className="px-5 py-5.5 flex items-center gap-5">
+				<Link
+					href={pathname}
+					locale="uz"
+					className={`${locale === 'uz' ? 'underline' : ''} leading-normal`}
+				>
+					UZB
+				</Link>
+				<Link
+					href={pathname}
+					locale="ru"
+					className={`${locale === 'ru' ? 'underline' : ''} leading-normal`}
+				>
+					RUS
+				</Link>
+				<Link
+					href={pathname}
+					locale="en"
+					className={`${locale === 'en' ? 'underline' : ''} leading-normal`}
+				>
+					ENG
+				</Link>
+			</div>
 		</div>
 	)
 }

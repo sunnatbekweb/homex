@@ -19,7 +19,7 @@
 			& li a {
 				transition: all 0.3s;
 				&:hover {
-					color: #ff5931;
+					color: var(--color-primary);
 				}
 			}
 		}

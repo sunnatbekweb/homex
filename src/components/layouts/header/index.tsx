@@ -4,6 +4,7 @@ import { NavDrawer } from '@/components/ui/drawer/NavDrawer'
 import { Nav } from '@/components/ui/nav'
 import { Link, usePathname } from '@/config/i18n/routing'
 import { useOutsideClick } from '@/hooks/useOutsideClick'
+import { useScrollPosition } from '@/hooks/useScrollPosition'
 import { Menu, X } from 'lucide-react'
 import { useLocale } from 'next-intl'
 import Image from 'next/image'
@@ -15,13 +16,15 @@ export const Header = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const locale = useLocale()
 	const pathname = usePathname()
+	const scrollY = useScrollPosition()
+
 	const dropdownRef = useOutsideClick(() => {
 		if (isOpen) setIsOpen(false)
 	})
 
 	return (
 		<header
-			className={`${styles.header} ${drawer ? styles.active_drawer : ''}`}
+			className={`${styles.header} ${scrollY > 5 ? styles.header_scrolled : ''} ${drawer ? styles.active_drawer : ''}`}
 		>
 			<div className={`container ${styles.header__container}`}>
 				<Link
@@ -78,7 +81,7 @@ export const Header = () => {
 									onClick={() => setIsOpen(false)}
 									className="flex justify-center text-center gap-x-2 uppercase py-1 text-sm"
 								>
-									<span className="text-[#171717] hover:text-[#ff5931]">
+									<span className="text-[#171717] hover:text-primary">
 										{l}
 									</span>
 								</Link>

@@ -3,7 +3,16 @@ import createNextIntlPlugin from 'next-intl/plugin'
 
 const nextConfig: NextConfig = {
 	/* config options here */
-	reactCompiler: true
+	reactCompiler: true,
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'http',
+				hostname: 'api.homexs.uz',
+				pathname: '/**'
+			}
+		]
+	}
 }
 
 const withNextIntil = createNextIntlPlugin('./src/config/i18n/request.ts')

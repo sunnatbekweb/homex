@@ -1,16 +1,18 @@
 'use client'
 
 import { useGetFaqs } from '@/hooks/api.query'
+import { TLocale } from '@/types'
 import { Minus, Plus } from 'lucide-react'
+import { useLocale } from 'next-intl'
 import styles from './style.module.scss'
 
 export const Faqs = () => {
 	const { data } = useGetFaqs()
-	console.log(data)
+	const locale = useLocale() as TLocale
 
 	return (
 		<div>
-			{[...Array(5)].map((_, index) => (
+			{data?.map((item, index) => (
 				<div
 					key={index}
 					className={styles.accordion}
@@ -26,7 +28,7 @@ export const Faqs = () => {
 								role="term"
 								aria-details="faq-1"
 							>
-								How can I book a service?
+								{item?.[`question_${locale}`]}
 							</span>
 							<div>
 								<span className={styles.open_icon}>
@@ -45,11 +47,7 @@ export const Faqs = () => {
 						role="definition"
 					>
 						<div className={styles['accordion__content-body']}>
-							<p>
-								You can easily book a service through our website by selecting
-								the service you need and filling out the booking form. Our team
-								will contact you shortly to confirm the appointment.
-							</p>
+							<p>{item?.[`answer_${locale}`]}</p>
 						</div>
 					</div>
 				</div>

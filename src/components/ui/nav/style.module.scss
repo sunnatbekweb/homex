@@ -11,13 +11,21 @@
 				transition: color 0.3s;
 
 				&:hover {
-					color: #ff5931;
+					color: var(--color-primary);
 				}
 			}
 
 			& .active {
-				color: #ff5931;
+				color: var(--color-primary);
 			}
+		}
+	}
+}
+
+@media screen and (min-width: 640px) {
+	.nav {
+		&__list {
+			flex-direction: row;
 		}
 	}
 }

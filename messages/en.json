@@ -2,7 +2,7 @@
 	"nav": {
 		"home": "Home",
 		"services": "Services",
-		"guarantee": "Guarantee",
+		"guarantee": "FAQ",
 		"reviews": "Reviews",
 		"contact": "Contact"
 	},
@@ -17,7 +17,11 @@
 	"services_title": "Complete home service solutions you can trust",
 	"statistics": {
 		"title": "Trusted by Homeowners Every Day",
-		"subtitle": "We take pride in delivering reliable and professional home services. Our growing number of satisfied customers and completed projects shows our commitment to quality and trust."
+		"subtitle": "We take pride in delivering reliable and professional home services. Our growing number of satisfied customers and completed projects shows our commitment to quality and trust.",
+		"repairs": "Repairs Completed",
+		"professionals": "Verified Professionals",
+		"support": "Customer Support",
+		"satisfaction": "Customer Satisfaction"
 	},
 	"reviews": {
 		"title": "What Our Customers Say",
@@ -25,12 +29,17 @@
 	},
 	"contact": {
 		"title": "We are always ready to help you and answer your questions",
+		"call": "Call Center",
+		"location": "Our Location",
+		"address": "18/35 Katta Khirmontepa, Uchtepa, Toshkent",
+		"social": "Social Network",
 		"name_label": "Hello my name is:",
 		"name_placeholder": "Name",
 		"email_label": "Here is my email:",
 		"email_placeholder": "Email",
 		"service_label": "Tell us what service you want?",
 		"service_placeholder": "Select service type",
+		"file": "Upload images that describe the problem:",
 		"note_label": "What else do you want?",
 		"note_placeholder": "Extra notes",
 		"send": "Send"

@@ -1,15 +1,23 @@
 import {
 	getFaqs,
+	getHeroVideo,
 	getServices,
 	getStatistics,
 	getTestimonials,
 	postContact
 } from '@/api'
-import { IContact } from '@/types'
+import { IFaq, IService, ITestimonials } from '@/types'
 import { useMutation, useQuery } from '@tanstack/react-query'
 
+export const useGetHeroVideo = () => {
+	return useQuery<{poster: string, video:string}>({
+		queryKey: ['hero-video'],
+		queryFn: () => getHeroVideo()
+	})
+}
+
 export const useGetServices = () => {
-	return useQuery({
+	return useQuery<IService[]>({
 		queryKey: ['services'],
 		queryFn: () => getServices()
 	})
@@ -23,22 +31,22 @@ export const useGetStatistics = () => {
 }
 
 export const useGetTestimonials = () => {
-	return useQuery({
+	return useQuery<ITestimonials[]>({
 		queryKey: ['testimonials'],
 		queryFn: () => getTestimonials()
 	})
 }
 
 export const useGetFaqs = () => {
-	return useQuery({
+	return useQuery<IFaq[]>({
 		queryKey: ['faqs'],
 		queryFn: () => getFaqs()
 	})
 }
 
 export const usePostContact = () => {
-	return useMutation<unknown, unknown, IContact>({
+	return useMutation({
 		mutationKey: ['contact'],
-		mutationFn: payload => postContact(payload)
+		mutationFn: (payload: FormData) => postContact(payload)
 	})
 }

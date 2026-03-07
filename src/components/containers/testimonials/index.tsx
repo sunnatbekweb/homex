@@ -1,50 +1,41 @@
 'use client'
 
 import { useGetTestimonials } from '@/hooks/api.query'
+import { TLocale } from '@/types'
+import { useLocale } from 'next-intl'
 import Image from 'next/image'
 
 export const Testimonials = () => {
 	const { data } = useGetTestimonials()
-	console.log(data)
-
+	const locale = useLocale() as TLocale
 	return (
-		<div className="relative grid grid-cols-1 sm:grid-cols-2 gap-3.75">
-			{[...Array(2)].map((_, index) => (
+		<div className="relative grid sm:grid-cols-2 gap-3.75">
+			{data?.map((item, index) => (
 				<div
 					key={index}
-					className="flex flex-col gap-y-3.75"
+					className="feedback_card"
 				>
-					{[...Array(4)].map((_, index) => (
-						<div
-							key={index}
-							className="feedback_card col-span-2"
-						>
-							<div className="flex items-center gap-2.5">
-								<Image
-									src={'/images/feedback_avatar.jpg'}
-									width={50}
-									height={50}
-									alt="Service icon"
-									className="rounded-full w-12.5 aspect-square"
-								/>
-								<div className="flex flex-col">
-									<strong>Nargiza</strong>
-									<span className="text-sm text-[#B1B1B1]">
-										Plumbing Service
-									</span>
-								</div>
-							</div>
-							<div className="mt-3 flex flex-col gap-y-2.5">
-								<strong className="font-semibold">
-									Air Conditioner Services
-								</strong>
-								<p className="text-sm leading-none">
-									Professional AC installation, removal, freon refill, and
-									repairs to keep your space cool and comfortable.
-								</p>
-							</div>
+					<div className="flex items-center gap-2.5">
+						<Image
+							src={item.avatar}
+							width={50}
+							height={50}
+							alt={item.customer_name}
+							className="rounded-full w-12.5 aspect-square"
+						/>
+						<div className="flex flex-col">
+							<strong>{item.customer_name}</strong>
+							<span className="text-sm text-[#B1B1B1]">Plumbing Service</span>
 						</div>
-					))}
+					</div>
+					<div className="mt-3 flex flex-col gap-y-2.5">
+						<strong className="font-semibold">
+							{item?.[`title_${locale}`]}
+						</strong>
+						<p className="text-sm leading-none">
+							{item?.[`comment_${locale}`]}
+						</p>
+					</div>
 				</div>
 			))}
 			<div className="feedback_gradient"></div>
