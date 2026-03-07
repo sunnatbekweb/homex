@@ -1,5 +1,8 @@
 import { ContactForm } from '@/components/containers/contact-form'
+import { Faqs } from '@/components/containers/faqs'
 import { Services } from '@/components/containers/services'
+import { Statistics } from '@/components/containers/statistics'
+import { Testimonials } from '@/components/containers/testimonials'
 import { LogoSlide } from '@/components/ui/slide/LogoSlide'
 import { MoveRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
@@ -84,40 +87,7 @@ export default function Home() {
 								{t('statistics.subtitle')}
 							</p>
 						</div>
-						<div className="flex flex-col md:flex-row items-center justify-between mt-7.5">
-							<div className="flex flex-col">
-								<strong className="font-semibold text-[4rem] text-[#FF5931] text-center md:text-start">
-									500+
-								</strong>
-								<span className="font-medium text-lg leading-none text-center md:text-start">
-									Repairs Completed
-								</span>
-							</div>
-							<div className="flex flex-col">
-								<strong className="font-semibold text-[4rem] text-[#FF5931] text-center md:text-start">
-									50+
-								</strong>
-								<span className="font-medium text-lg leading-none text-center md:text-start">
-									Verified Professionals
-								</span>
-							</div>
-							<div className="flex flex-col">
-								<strong className="font-semibold text-[4rem] text-[#FF5931] text-center md:text-start">
-									24/7
-								</strong>
-								<span className="font-medium text-lg leading-none text-center md:text-start">
-									Customer Support
-								</span>
-							</div>
-							<div className="flex flex-col">
-								<strong className="font-semibold text-[4rem] text-[#FF5931] text-center md:text-start">
-									98%
-								</strong>
-								<span className="font-medium text-lg leading-none text-center md:text-start">
-									Customer Satisfaction
-								</span>
-							</div>
-						</div>
+						<Statistics />
 					</div>
 				</div>
 			</section>
@@ -134,47 +104,7 @@ export default function Home() {
 								</p>
 							</div>
 						</div>
-						<div className="relative grid grid-cols-1 sm:grid-cols-2 gap-3.75">
-							{[...Array(2)].map((_, index) => (
-								<div
-									key={index}
-									className="flex flex-col gap-y-3.75"
-								>
-									{[...Array(4)].map((_, index) => (
-										<div
-											key={index}
-											className="feedback_card col-span-2"
-										>
-											<div className="flex items-center gap-2.5">
-												<Image
-													src={'/images/feedback_avatar.jpg'}
-													width={50}
-													height={50}
-													alt="Service icon"
-													className="rounded-full w-12.5 aspect-square"
-												/>
-												<div className="flex flex-col">
-													<strong>Nargiza</strong>
-													<span className="text-sm text-[#B1B1B1]">
-														Plumbing Service
-													</span>
-												</div>
-											</div>
-											<div className="mt-3 flex flex-col gap-y-2.5">
-												<strong className="font-semibold">
-													Air Conditioner Services
-												</strong>
-												<p className="text-sm leading-none">
-													Professional AC installation, removal, freon refill,
-													and repairs to keep your space cool and comfortable.
-												</p>
-											</div>
-										</div>
-									))}
-								</div>
-							))}
-							<div className="feedback_gradient"></div>
-						</div>
+						<Testimonials />
 					</div>
 				</div>
 			</section>
@@ -184,45 +114,7 @@ export default function Home() {
 						<h2 className="font-medium text-2xl md:text-[2.625rem] leading-none mb-12.5 text-center">
 							FAQ
 						</h2>
-						<div>
-							{[...Array(5)].map((_, index) => (
-								<div
-									key={index}
-									className="accordion"
-								>
-									<details
-										open
-										className="accordion__details"
-										name="faq"
-									>
-										<summary className="accordion__summary">
-											<span
-												className="accordion__title"
-												role="term"
-												aria-details="faq-1"
-											>
-												How can I book a service?
-											</span>
-										</summary>
-									</details>
-
-									<div
-										className="accordion__content"
-										id="faq-1"
-										role="definition"
-									>
-										<div className="accordion__content-body">
-											<p>
-												You can easily book a service through our website by
-												selecting the service you need and filling out the
-												booking form. Our team will contact you shortly to
-												confirm the appointment.
-											</p>
-										</div>
-									</div>
-								</div>
-							))}
-						</div>
+						<Faqs />
 					</div>
 				</div>
 			</section>
