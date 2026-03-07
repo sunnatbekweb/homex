@@ -1,47 +1,37 @@
+# ---------- builder ----------
 FROM node:20-alpine AS builder
+
 WORKDIR /app
 
-# build-time env (ОБЯЗАТЕЛЬНО ДО build)
-# ARG API_URL
-# ARG NEXT_PUBLIC_GOOGLE_CLIENT_ID
-# ARG NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+RUN apk add --no-cache libc6-compat python3 make g++
+
 ARG NEXT_PUBLIC_API_URL
-# ARG NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
-# ARG NEXT_PUBLIC_GOOGLE_MAPS_JS_KEY
-
-# ENV API_URL=$API_URL
-# ENV NEXT_PUBLIC_GOOGLE_CLIENT_ID=$NEXT_PUBLIC_GOOGLE_CLIENT_ID
-# ENV NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=$NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
 ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
-# ENV NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=$NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
-# ENV NEXT_PUBLIC_GOOGLE_MAPS_JS_KEY=$NEXT_PUBLIC_GOOGLE_MAPS_JS_KEY
-# ENV NEXT_PUBLIC_WS_BASE_URL=wss://infonexuz.uz
 
-COPY package*.json ./
+COPY package.json package-lock.json ./
+
 RUN npm ci
 
 COPY . .
+
 RUN npm run build
 
 
 # ---------- runner ----------
 FROM node:20-alpine
+
 WORKDIR /app
 
-# ENV NODE_ENV=production
+RUN apk add --no-cache libc6-compat
 
-# # runtime env (для server.js / API)
-# ENV API_URL=$API_URL
-# ENV NEXT_PUBLIC_GOOGLE_CLIENT_ID=$NEXT_PUBLIC_GOOGLE_CLIENT_ID
-# ENV NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=$NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+ARG NEXT_PUBLIC_API_URL
 ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
-# ENV NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=$NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
-# ENV NEXT_PUBLIC_GOOGLE_MAPS_JS_KEY=$NEXT_PUBLIC_GOOGLE_MAPS_JS_KEY
-# ENV NEXT_PUBLIC_WS_BASE_URL=wss://infonexuz.uz
+ENV NODE_ENV=production
 
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public
 
 EXPOSE 3000
+
 CMD ["node", "server.js"]
