@@ -28,6 +28,20 @@ body {
 	padding: 0 10px;
 	border-left: 1px solid #505050;
 	border-right: 1px solid #505050;
+	position: relative;
+	z-index: 1;
+}
+
+.container::after {
+	content: '';
+	width: 1px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	z-index: -1;
+	transform: translateX(-50%);
+	background: #505050;
 }
 
 .hero {
