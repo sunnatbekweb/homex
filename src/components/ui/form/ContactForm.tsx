@@ -1,50 +1,67 @@
+import { useTranslations } from 'next-intl'
 import styles from './style.module.scss'
 
 export const ContactForm = () => {
+	const t = useTranslations('contact')
+
 	return (
 		<form className={styles.form}>
 			<label
 				htmlFor="name"
 				className={styles.label}
 			>
-				<span>Hello my name is:</span>
+				<span>{t('name_label')}</span>
 				<input
 					type="text"
 					name="name"
-					placeholder="Name"
+					placeholder={t('name_placeholder')}
+					required
 				/>
 			</label>
 			<label
 				htmlFor="email"
 				className={styles.label}
 			>
-				<span>Here is my email:</span>
+				<span>{t('email_label')}</span>
 				<input
 					type="email"
 					name="email"
-					placeholder="Email"
+					placeholder={t('email_placeholder')}
+					required
 				/>
 			</label>
 			<label
 				htmlFor="service"
 				className={`${styles.label} md:col-span-2`}
 			>
-				<span>Tell us what service you want?</span>
-				<select name="service">
-					<option value="0">Select service type</option>
+				<span>{t('service_label')}</span>
+				<select
+					name="service"
+					required
+				>
+					<option
+						value=""
+						selected
+						disabled
+					>
+						{t('service_placeholder')}
+					</option>
 				</select>
 			</label>
 			<label
 				htmlFor="note"
 				className={`${styles.label} md:col-span-2`}
 			>
-				<span>What else do you want?</span>
+				<span>{t('note_label')}</span>
 				<textarea
 					name="note"
-					placeholder="Extra notes"
+					placeholder={t('note_placeholder')}
+					required
 				></textarea>
 			</label>
-			<button className={`${styles.send_button} md:col-span-2`}>Send</button>
+			<button className={`${styles.send_button} md:col-span-2`}>
+				{t('send')}
+			</button>
 		</form>
 	)
 }

@@ -1,0 +1,39 @@
+{
+	"nav": {
+		"home": "Bosh sahifa",
+		"services": "Xizmatlar",
+		"guarantee": "Kafolat",
+		"reviews": "Sharhlar",
+		"contact": "Aloqa"
+	},
+	"hero": {
+		"title": "Uy ta’miri uchun ishonchli mutaxassislar",
+		"text": "Uy xizmatlari bo‘yicha ishonchli mutaxassislarni bir necha daqiqada buyurtma qiling. Kichik ta’mirlash yoki katta muammo bo‘lishidan qat’i nazar, mutaxassislarimiz sizning ehtiyojlaringizga mos ravishda ishonchli, arzon va o‘z vaqtida yechimlar taqdim etadi.",
+		"button1": "Buyurtma berish",
+		"button2": "Batafsil",
+		"bottom_text": "Allaqachon ishonch bildirganlar"
+	},
+	"logos_title": "Yetakchi innovatsion jamoalar bizga ishonadi",
+	"services_title": "Ishonchli uy xizmatlari yechimlari",
+	"statistics": {
+		"title": "Har kuni uy egalari bizga ishonadi",
+		"subtitle": "Biz uy xizmatlarini ishonchli va professional tarzda taqdim etishdan faxrlanamiz. Mamnun mijozlar va bajarilgan loyihalar sonining ortib borishi sifat va ishonchga bo‘lgan sodiqligimizni ko‘rsatadi."
+	},
+	"reviews": {
+		"title": "Mijozlarimiz nima deydi",
+		"text": "Biz uy egalarga ishonchli va professional xizmatlar ko‘rsatishdan faxrlanamiz. Quyida mijozlarimizning mutaxassislarimiz bilan ishlash tajribasi haqida fikrlari keltirilgan."
+	},
+	"contact": {
+		"title": "Uy ta’miri bo‘yicha yordam kerakmi?",
+		"name_label": "Salom, mening ismim:",
+		"name_placeholder": "Ism",
+		"email_label": "Mening emailim:",
+		"email_placeholder": "Email",
+		"service_label": "Qaysi xizmat kerak?",
+		"service_placeholder": "Xizmat turini tanlang",
+		"note_label": "Yana nima qo‘shmoqchisiz?",
+		"note_placeholder": "Qo‘shimcha izohlar",
+		"send": "Yuborish"
+	},
+	"footer_text": "Barcha huquqlar himoyalangan."
+}

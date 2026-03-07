@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 
 export const NavDrawer = ({
@@ -7,6 +8,7 @@ export const NavDrawer = ({
 	drawer: boolean
 	close: () => void
 }) => {
+	const t = useTranslations('nav')
 	return (
 		<div
 			className={`${drawer ? 'left-0' : 'left-full'} w-full h-screen fixed top-15 left-0 bg-[#171717] duration-300`}
@@ -17,7 +19,7 @@ export const NavDrawer = ({
 						href={'#top'}
 						onClick={close}
 					>
-						Home
+						{t("home")}
 					</Link>
 				</li>
 				<li>
@@ -25,15 +27,15 @@ export const NavDrawer = ({
 						href={'#service'}
 						onClick={close}
 					>
-						Services
+						{t("services")}
 					</Link>
 				</li>
 				<li>
 					<Link
-						href={'#gurantee'}
+						href={'#guarantee'}
 						onClick={close}
 					>
-						Gurantee
+						{t("guarantee")}
 					</Link>
 				</li>
 				<li>
@@ -41,7 +43,7 @@ export const NavDrawer = ({
 						href={'#rewiews'}
 						onClick={close}
 					>
-						Reviews
+						{t("reviews")}
 					</Link>
 				</li>
 				<li>
@@ -49,7 +51,7 @@ export const NavDrawer = ({
 						href={'#contact'}
 						onClick={close}
 					>
-						Contact
+						{t("contact")}
 					</Link>
 				</li>
 			</ul>

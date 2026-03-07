@@ -2,31 +2,31 @@ import { ContactForm } from '@/components/ui/form/ContactForm'
 import { LogoSlide } from '@/components/ui/slide/LogoSlide'
 import { ServiceSlide } from '@/components/ui/slide/ServiceSlide'
 import { MoveRight } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
+	const t = useTranslations()
 	return (
 		<main>
 			<section className="hero h-screen">
 				<div className="max-w-210 mx-auto mt-[15%]">
 					<h2 className="font-semibold text-5xl md:text-[100px] leading-none text-center mb-7.5">
-						Trusted Experts for Home Repairs
+						{t('hero.title')}
 					</h2>
 					<p className="leading-normal text-center mx-[10%] mb-12.5">
-						Book trusted home service professionals in minutes. Whether it’s a
-						small repair or a major fix, our experts deliver reliable,
-						affordable, and timely solutions tailored to your needs.
+						{t('hero.text')}
 					</p>
 					<div className="flex justify-center gap-5 mb-20.5 font-medium">
 						<Link href={'#contact'}>
 							<button className="h-13 flex items-center gap-2.5 px-6 rounded-4xl bg-[#8D8D8D99] text-sm md:text-xl text-white">
-								Hire now <MoveRight />
+								{t('hero.button1')} <MoveRight />
 							</button>
 						</Link>
 						<Link href={'#services'}>
 							<button className="h-13 px-6 rounded-4xl bg-white text-sm md:text-xl text-black">
-								Learn more
+								{t('hero.button2')}
 							</button>
 						</Link>
 					</div>
@@ -44,7 +44,7 @@ export default function Home() {
 							))}
 						</div>
 						<p className="font-medium text-sm md:text-base">
-							Trusted already by 500+
+							{t('hero.bottom_text')} 500+
 						</p>
 					</div>
 				</div>
@@ -54,7 +54,7 @@ export default function Home() {
 				<div className="container h-full">
 					<div className="pt-15 pb-15 md:pb-25">
 						<p className="font-medium text-lg text-center mb-5">
-							Trusted by top innovative teams
+							{t('logos_title')}
 						</p>
 						<div className="relative h-16 flex items-center justify-between">
 							<LogoSlide />
@@ -67,7 +67,7 @@ export default function Home() {
 				<div className="container">
 					<div className="py-15 md:py-25">
 						<h2 className="max-w-120 mx-auto font-medium text-2xl md:text-[2.625rem] leading-none text-center mb-7.5">
-							Complete home service solutions you can trust
+							{t('services_title')}
 						</h2>
 						<div className="grid grid-cols-1 gap-3.75 md:grid-cols-6 mb-7.5">
 							{[...Array(3)].map((_, index) => (
@@ -124,17 +124,15 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section id="gurantee">
+			<section id="guarantee">
 				<div className="container">
 					<div className="py-15 md:py-25">
 						<div className="max-w-2xl mx-auto">
 							<h2 className="max-w-120 mx-auto font-medium text-2xl md:text-[2.625rem] leading-none text-center mb-7.5">
-								Trusted by Homeowners Every Day
+								{t('statistics.title')}
 							</h2>
 							<p className="leading-normal text-center">
-								We take pride in delivering reliable and professional home
-								services. Our growing number of satisfied customers and
-								completed projects shows our commitment to quality and trust.
+								{t('statistics.subtitle')}
 							</p>
 						</div>
 						<div className="flex flex-col md:flex-row items-center justify-between mt-7.5">
@@ -180,12 +178,10 @@ export default function Home() {
 						<div>
 							<div className="max-w-116">
 								<h2 className="font-medium text-2xl md:text-[2.625rem] leading-none mb-7.5 text-center md:text-start">
-									What Our Customers Say
+									{t('reviews.title')}
 								</h2>
 								<p className="leading-normal text-center md:text-start">
-									We are proud to help homeowners with reliable and professional
-									services. Here’s what some of our satisfied customers say
-									about their experience with our experts.
+									{t('reviews.text')}
 								</p>
 							</div>
 						</div>
@@ -288,7 +284,7 @@ export default function Home() {
 				<div className="container">
 					<div className="pt-15 md:pt-25 pb-25 md:pb-50">
 						<h2 className="max-w-120 mx-auto font-medium text-2xl md:text-[2.625rem] leading-none text-center mb-12.5">
-							Need Help With Home Repairs?
+							{t('contact.title')}
 						</h2>
 						<ContactForm />
 					</div>
