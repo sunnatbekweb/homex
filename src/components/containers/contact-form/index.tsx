@@ -1,11 +1,23 @@
+'use client'
+
+import { usePostContact } from '@/hooks/api.query'
+import { IContact } from '@/types'
 import { useTranslations } from 'next-intl'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import styles from './style.module.scss'
 
 export const ContactForm = () => {
 	const t = useTranslations('contact')
+	const { register, handleSubmit } = useForm<IContact>()
+	const { mutate, isPending } = usePostContact()
+
+	const onSubmit: SubmitHandler<IContact> = data => mutate(data)
 
 	return (
-		<form className={styles.form}>
+		<form
+			onSubmit={handleSubmit(onSubmit)}
+			className={styles.form}
+		>
 			<label
 				htmlFor="name"
 				className={styles.label}
@@ -13,9 +25,8 @@ export const ContactForm = () => {
 				<span>{t('name_label')}</span>
 				<input
 					type="text"
-					name="name"
 					placeholder={t('name_placeholder')}
-					required
+					{...register('name', { required: true })}
 				/>
 			</label>
 			<label
@@ -25,9 +36,8 @@ export const ContactForm = () => {
 				<span>{t('email_label')}</span>
 				<input
 					type="email"
-					name="email"
 					placeholder={t('email_placeholder')}
-					required
+					{...register('email', { required: true })}
 				/>
 			</label>
 			<label
@@ -36,16 +46,16 @@ export const ContactForm = () => {
 			>
 				<span>{t('service_label')}</span>
 				<select
-					name="service"
-					required
+					{...register('service', { required: true })}
+					defaultValue={''}
 				>
 					<option
 						value=""
-						selected
 						disabled
 					>
 						{t('service_placeholder')}
 					</option>
+					<option value={1}>Value 1</option>
 				</select>
 			</label>
 			<label
@@ -54,13 +64,12 @@ export const ContactForm = () => {
 			>
 				<span>{t('note_label')}</span>
 				<textarea
-					name="note"
+					{...register('extra_notes', { required: true })}
 					placeholder={t('note_placeholder')}
-					required
 				></textarea>
 			</label>
 			<button className={`${styles.send_button} md:col-span-2`}>
-				{t('send')}
+				{isPending ? '...' : t('send')}
 			</button>
 		</form>
 	)

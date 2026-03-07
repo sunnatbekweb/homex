@@ -1,6 +1,6 @@
-import { ContactForm } from '@/components/ui/form/ContactForm'
+import { ContactForm } from '@/components/containers/contact-form'
+import { Services } from '@/components/containers/services'
 import { LogoSlide } from '@/components/ui/slide/LogoSlide'
-import { ServiceSlide } from '@/components/ui/slide/ServiceSlide'
 import { MoveRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
@@ -69,58 +69,7 @@ export default function Home() {
 						<h2 className="max-w-120 mx-auto font-medium text-2xl md:text-[2.625rem] leading-none text-center mb-7.5">
 							{t('services_title')}
 						</h2>
-						<div className="grid grid-cols-1 gap-3.75 md:grid-cols-6 mb-7.5">
-							{[...Array(3)].map((_, index) => (
-								<div
-									key={index}
-									className="card col-span-2"
-								>
-									<div className="w-9.5 h-9.5 rounded-md bg-[#FF5931] flex items-center justify-center">
-										<Image
-											src={'/images/service_icon.png'}
-											width={24}
-											height={24}
-											alt="Service icon"
-										/>
-									</div>
-									<div className="mt-3 flex flex-col gap-y-2.5">
-										<strong className="font-semibold">
-											Air Conditioner Services
-										</strong>
-										<p className="text-sm leading-none">
-											Professional AC installation, removal, freon refill, and
-											repairs to keep your space cool and comfortable.
-										</p>
-									</div>
-								</div>
-							))}
-							<div className="hidden md:block"></div>
-							{[...Array(2)].map((_, index) => (
-								<div
-									key={index}
-									className="card col-span-2"
-								>
-									<div className="w-9.5 h-9.5 rounded-md bg-[#FF5931] flex items-center justify-center">
-										<Image
-											src={'/images/service_icon.png'}
-											width={24}
-											height={24}
-											alt="Service icon"
-										/>
-									</div>
-									<div className="mt-3 flex flex-col gap-y-2.5">
-										<strong className="font-semibold">
-											Air Conditioner Services
-										</strong>
-										<p className="text-sm leading-none">
-											Professional AC installation, removal, freon refill, and
-											repairs to keep your space cool and comfortable.
-										</p>
-									</div>
-								</div>
-							))}
-						</div>
-						<ServiceSlide />
+						<Services />
 					</div>
 				</div>
 			</section>

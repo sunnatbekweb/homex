@@ -1,5 +1,6 @@
 import { Footer } from '@/components/layouts/footer'
 import { Header } from '@/components/layouts/header'
+import { QueryProvider } from '@/providers/queryClientProvider'
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
@@ -27,9 +28,11 @@ export default async function RootLayout({
 		<html lang="en">
 			<body className={`${exo_2.variable} antialiased`}>
 				<NextIntlClientProvider messages={messages}>
-					<Header />
-					{children}
-					<Footer />
+					<QueryProvider>
+						<Header />
+						{children}
+						<Footer />
+					</QueryProvider>
 				</NextIntlClientProvider>
 			</body>
 		</html>

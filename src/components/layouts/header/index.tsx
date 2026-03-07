@@ -1,8 +1,8 @@
 'use client'
 
 import { NavDrawer } from '@/components/ui/drawer/NavDrawer'
+import { Link, usePathname } from '@/config/i18n/routing'
 import { useOutsideClick } from '@/hooks/useOutsideClick'
-import { Link, usePathname } from '@/i18n/routing'
 import { Menu } from 'lucide-react'
 import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
