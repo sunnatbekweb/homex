@@ -26,7 +26,7 @@ export const Services = () => {
 									/>
 								</div>
 								<div className="mt-3 flex flex-col gap-y-2.5">
-									<strong className="font-semibold">
+									<strong className="font-semibold leading-tight">
 										{service?.[`title_${locale}`]}
 									</strong>
 									<ul className="list-disc ps-5">

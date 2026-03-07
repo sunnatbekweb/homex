@@ -38,7 +38,7 @@ export const Testimonials = () => {
 					</div>
 				</div>
 			))}
-			<div className="feedback_gradient"></div>
+			<div className="feedback_gradient hidden lg:block"></div>
 		</div>
 	)
 }

@@ -43,7 +43,7 @@ export const ServiceSlide = () => {
 							alt={service?.[`title_${locale}`]}
 							className="w-full"
 						/>
-						<div className="absolute left-5 bottom-5 px-2.5 py-1.25 rounded-md bg-primary text-sm leading-none text-white line-clamp-1 w-[calc(100%-40px)]">
+						<div className="absolute left-5 bottom-5 px-2.5 py-1.25 rounded-md bg-primary text-sm leading-none text-white line-clamp-1 w-3/4">
 							{service?.[`title_${locale}`]}
 						</div>
 						<div className="bg-black/20 w-full h-full absolute top-0 left-0"></div>
