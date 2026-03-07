@@ -1,6 +1,8 @@
 'use client'
 
 import { useGetFaqs } from '@/hooks/api.query'
+import { Minus, Plus } from 'lucide-react'
+import styles from './style.module.scss'
 
 export const Faqs = () => {
 	const { data } = useGetFaqs()
@@ -11,30 +13,38 @@ export const Faqs = () => {
 			{[...Array(5)].map((_, index) => (
 				<div
 					key={index}
-					className="accordion"
+					className={styles.accordion}
 				>
 					<details
 						open
-						className="accordion__details"
+						className={styles.accordion__details}
 						name="faq"
 					>
-						<summary className="accordion__summary">
+						<summary className={styles.accordion__summary}>
 							<span
-								className="accordion__title"
+								className={styles.accordion__title}
 								role="term"
 								aria-details="faq-1"
 							>
 								How can I book a service?
 							</span>
+							<div>
+								<span className={styles.open_icon}>
+									<Plus size={32} />
+								</span>
+								<span className={styles.close_icon}>
+									<Minus size={32} />
+								</span>
+							</div>
 						</summary>
 					</details>
 
 					<div
-						className="accordion__content"
+						className={styles.accordion__content}
 						id="faq-1"
 						role="definition"
 					>
-						<div className="accordion__content-body">
+						<div className={styles['accordion__content-body']}>
 							<p>
 								You can easily book a service through our website by selecting
 								the service you need and filling out the booking form. Our team

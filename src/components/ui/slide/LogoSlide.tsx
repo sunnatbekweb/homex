@@ -26,7 +26,7 @@ export const LogoSlide = () => {
 				}
 			}}
 			centeredSlides
-			className="mySwiper"
+			className="logo_slide"
 		>
 			{[...Array(8)].map((_, index) => (
 				<SwiperSlide
@@ -38,7 +38,7 @@ export const LogoSlide = () => {
 						width={170}
 						height={30}
 						alt="Logo"
-						className="rounded-[10px]"
+						className="rounded-[10px] h-7.5 mx-auto"
 					/>
 				</SwiperSlide>
 			))}

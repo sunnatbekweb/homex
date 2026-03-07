@@ -15,6 +15,7 @@ export const ServiceSlide = () => {
 			<Swiper
 				slidesPerView={1.75}
 				spaceBetween={15}
+				loop
 				breakpoints={{
 					640: {
 						slidesPerView: 2.5
@@ -37,11 +38,10 @@ export const ServiceSlide = () => {
 							alt="Service image"
 							className="rounded-[10px] w-full"
 						/>
-						{/* <div className="bg-black/20 w-full h-full absolute top-0 left-0"></div> */}
+						<div className="bg-black/20 w-full h-full absolute top-0 left-0"></div>
 					</SwiperSlide>
 				))}
 			</Swiper>
-			{/* <div className="gradient"></div> */}
 		</div>
 	)
 }

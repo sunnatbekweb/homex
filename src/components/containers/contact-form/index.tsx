@@ -42,7 +42,7 @@ export const ContactForm = () => {
 			</label>
 			<label
 				htmlFor="service"
-				className={`${styles.label} md:col-span-2`}
+				className={`${styles.label} lg:col-span-2`}
 			>
 				<span>{t('service_label')}</span>
 				<select
@@ -60,7 +60,7 @@ export const ContactForm = () => {
 			</label>
 			<label
 				htmlFor="note"
-				className={`${styles.label} md:col-span-2`}
+				className={`${styles.label} lg:col-span-2`}
 			>
 				<span>{t('note_label')}</span>
 				<textarea
@@ -68,7 +68,7 @@ export const ContactForm = () => {
 					placeholder={t('note_placeholder')}
 				></textarea>
 			</label>
-			<button className={`${styles.send_button} md:col-span-2`}>
+			<button className={`${styles.send_button} lg:col-span-2`}>
 				{isPending ? '...' : t('send')}
 			</button>
 		</form>

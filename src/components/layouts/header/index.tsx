@@ -1,10 +1,11 @@
 'use client'
 
 import { NavDrawer } from '@/components/ui/drawer/NavDrawer'
+import { Nav } from '@/components/ui/nav'
 import { Link, usePathname } from '@/config/i18n/routing'
 import { useOutsideClick } from '@/hooks/useOutsideClick'
-import { Menu } from 'lucide-react'
-import { useLocale, useTranslations } from 'next-intl'
+import { Menu, X } from 'lucide-react'
+import { useLocale } from 'next-intl'
 import Image from 'next/image'
 import { useState } from 'react'
 import styles from './style.module.scss'
@@ -12,16 +13,16 @@ import styles from './style.module.scss'
 export const Header = () => {
 	const [drawer, setDrawer] = useState(false)
 	const [isOpen, setIsOpen] = useState(false)
-	const t = useTranslations('nav')
 	const locale = useLocale()
 	const pathname = usePathname()
-
 	const dropdownRef = useOutsideClick(() => {
 		if (isOpen) setIsOpen(false)
 	})
 
 	return (
-		<header className={`${styles.header} ${drawer ? styles.active : ''}`}>
+		<header
+			className={`${styles.header} ${drawer ? styles.active_drawer : ''}`}
+		>
 			<div className={`container ${styles.header__container}`}>
 				<Link
 					href={'/'}
@@ -40,50 +41,9 @@ export const Header = () => {
 						alt="Homex logo text"
 					/>
 				</Link>
-				<nav className={styles.nav}>
-					<ul className={styles.nav__list}>
-						<li className={styles['nav__list--item']}>
-							<Link
-								href={'#top'}
-								className={styles['nav__list--item-link']}
-							>
-								{t('home')}
-							</Link>
-						</li>
-						<li className={styles['nav__list--item']}>
-							<Link
-								href={'#services'}
-								className={styles['nav__list--item-link']}
-							>
-								{t('services')}
-							</Link>
-						</li>
-						<li className={styles['nav__list--item']}>
-							<Link
-								href={'#guarantee'}
-								className={styles['nav__list--item-link']}
-							>
-								{t('guarantee')}
-							</Link>
-						</li>
-						<li className={styles['nav__list--item']}>
-							<Link
-								href={'#reviews'}
-								className={styles['nav__list--item-link']}
-							>
-								{t('reviews')}
-							</Link>
-						</li>
-						<li className={styles['nav__list--item']}>
-							<Link
-								href={'#contact'}
-								className={styles['nav__list--item-link']}
-							>
-								{t('contact')}
-							</Link>
-						</li>
-					</ul>
-				</nav>
+				<div className="hidden md:block">
+					<Nav />
+				</div>
 				<div
 					ref={dropdownRef}
 					className="hidden relative md:block"
@@ -129,7 +89,7 @@ export const Header = () => {
 					onClick={() => setDrawer(!drawer)}
 					className="md:hidden"
 				>
-					<Menu size={24} />
+					{drawer ? <X size={24} /> : <Menu size={24} />}
 				</button>
 				<NavDrawer
 					drawer={drawer}

@@ -15,7 +15,7 @@ export default function Home() {
 		<main>
 			<section className="hero h-screen">
 				<div className="max-w-210 mx-auto mt-[15%]">
-					<h2 className="font-semibold text-5xl md:text-[100px] leading-none text-center mb-7.5">
+					<h2 className="font-semibold text-5xl md:text-[75px] leading-none text-center mb-7.5">
 						{t('hero.title')}
 					</h2>
 					<p className="leading-normal text-center mx-[10%] mb-12.5">
@@ -69,7 +69,7 @@ export default function Home() {
 			<section id="services">
 				<div className="container">
 					<div className="py-15 md:py-25">
-						<h2 className="max-w-120 mx-auto font-medium text-2xl md:text-[2.625rem] leading-none text-center mb-7.5">
+						<h2 className="max-w-155 mx-auto font-medium text-2xl md:text-[2.625rem] leading-none text-center mb-7.5">
 							{t('services_title')}
 						</h2>
 						<Services />
@@ -80,7 +80,7 @@ export default function Home() {
 				<div className="container">
 					<div className="py-15 md:py-25">
 						<div className="max-w-2xl mx-auto">
-							<h2 className="max-w-120 mx-auto font-medium text-2xl md:text-[2.625rem] leading-none text-center mb-7.5">
+							<h2 className="max-w-155 mx-auto font-medium text-2xl md:text-[2.625rem] leading-none text-center mb-7.5">
 								{t('statistics.title')}
 							</h2>
 							<p className="leading-normal text-center">
@@ -123,10 +123,105 @@ export default function Home() {
 				className="border-b border-[#505050]"
 			>
 				<div className="container">
-					<div className="pt-15 md:pt-25 pb-25 md:pb-50">
-						<h2 className="max-w-120 mx-auto font-medium text-2xl md:text-[2.625rem] leading-none text-center mb-12.5">
-							{t('contact.title')}
-						</h2>
+					<div className="grid gap-y-12.5 gap-x-10 md:grid-cols-2 pt-15 md:pt-25 pb-25 md:pb-50">
+						<div>
+							<h2 className="max-w-155 mx-auto font-medium text-2xl md:text-[2.625rem] leading-none text-center md:text-start mb-12.5">
+								{t('contact.title')}
+							</h2>
+							<div className="grid max-w-3/4 sm:max-w-full mx-auto sm:grid-cols-2 text-center sm:text-start gap-y-10">
+								<div>
+									<b className="leading-none">Call Center</b>
+									<br />
+									<br />
+									<a
+										href="tel:"
+										className="text-[#B1B1B1]"
+									>
+										+998 99 900 00 00
+									</a>
+									<br />
+									<a
+										href="tel:"
+										className="text-[#B1B1B1]"
+									>
+										+998 99 900 00 00
+									</a>
+								</div>
+								<div>
+									<b className="leading-none">Our Location</b>
+									<br />
+									<br />
+									<a
+										href="tel:"
+										className="text-[#B1B1B1]"
+									>
+										18/35 Katta Khirmontepa, Uchtepa, Toshkent
+									</a>
+								</div>
+								<div>
+									<b className="leading-none">Telegram</b>
+									<br />
+									<br />
+									<a
+										href="https://t.me/@homex_admin"
+										className="text-[#B1B1B1]"
+									>
+										@homex_admin
+									</a>
+								</div>
+								<div>
+									<b className="leading-none">Social Network</b>
+									<br />
+									<br />
+									<div className="flex items-center justify-center gap-6.25">
+										<a
+											href="https://t.me/"
+											className="text-[#B1B1B1]"
+										>
+											<Image
+												src={'/icons/telegram.svg'}
+												width={25}
+												height={25}
+												alt="Telegram"
+											/>
+										</a>
+										<a
+											href="https://facebook.com"
+											className="text-[#B1B1B1]"
+										>
+											<Image
+												src={'/icons/facebook.svg'}
+												width={25}
+												height={25}
+												alt="Facebook"
+											/>
+										</a>
+										<a
+											href="https://instagram.com"
+											className="text-[#B1B1B1]"
+										>
+											<Image
+												src={'/icons/instagram.svg'}
+												width={25}
+												height={25}
+												alt="Instagram"
+											/>
+										</a>
+										<a
+											href="https://youtube.com"
+											className="text-[#B1B1B1]"
+										>
+											<Image
+												src={'/icons/youtube.svg'}
+												width={25}
+												height={25}
+												alt="YouTube"
+											/>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
 						<ContactForm />
 					</div>
 				</div>
