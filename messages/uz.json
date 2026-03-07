@@ -1,0 +1,48 @@
+{
+	"nav": {
+		"home": "Bosh sahifa",
+		"services": "Xizmatlar",
+		"guarantee": "FAQ",
+		"reviews": "Sharhlar",
+		"contact": "Aloqa"
+	},
+	"hero": {
+		"title": "HomeX — uy va ofislar uchun texnik servis xizmati",
+		"text": "Uy xizmatlari uchun ishonchli mutaxassislarni bir necha daqiqada chaqiring. Kichik ta’mirlash yoki katta muammo bo‘lishidan qat’i nazar, mutaxassislarimiz sizning ehtiyojlaringizga mos ravishda ishonchli, arzon va o‘z vaqtida yechimlar taqdim etadi.",
+		"button1": "Bog'lanish",
+		"button2": "Batafsil",
+		"bottom_text": "Allaqachon ishonch bildirganlar"
+	},
+	"logos_title": "Yetakchi innovatsion jamoalar bizga ishonadi",
+	"services_title": "Ishonchli uy xizmatlari yechimlari",
+	"statistics": {
+		"title": "Har kuni uy egalari bizga ishonadi",
+		"subtitle": "Biz uy xizmatlarini ishonchli va professional tarzda taqdim etishdan faxrlanamiz. Mamnun mijozlar va bajarilgan loyihalar sonining ortib borishi sifat va ishonchga bo‘lgan sodiqligimizni ko‘rsatadi.",
+		"repairs": "Tuzatilgan ta’mirlar",
+		"professionals": "Tekshirilgan mutaxassislar",
+		"support": "Mijozlarni qo‘llab-quvvatlash",
+		"satisfaction": "Mijozlar qoniqishi"
+	},
+	"reviews": {
+		"title": "Mijozlarimiz nima deydi",
+		"text": "Biz uy egalarga ishonchli va professional xizmatlar ko‘rsatishdan faxrlanamiz. Quyida mijozlarimizning mutaxassislarimiz bilan ishlash tajribasi haqida fikrlari keltirilgan."
+	},
+	"contact": {
+		"title": "Biz har doim sizga yordam berishga va savollaringizga javob berishga tayyormiz.",
+		"call": "Call markazi",
+		"location": "Bizning manzil",
+		"address": "Toshkent, Uchtepa tumani, Katta Xirmontepa 18/35",
+		"social": "Ijtimoiy tarmoqlar",
+		"name_label": "Salom, mening ismim:",
+		"name_placeholder": "Ism",
+		"email_label": "Mening emailim:",
+		"email_placeholder": "Email",
+		"service_label": "Qaysi xizmat kerak?",
+		"service_placeholder": "Xizmat turini tanlang",
+		"file": "Muammoni tasvirlaydigan rasmlarni yuklang.",
+		"note_label": "Yana nima qo‘shmoqchisiz?",
+		"note_placeholder": "Qo‘shimcha izohlar",
+		"send": "Yuborish"
+	},
+	"footer_text": "Barcha huquqlar himoyalangan."
+}

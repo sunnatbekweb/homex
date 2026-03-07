@@ -1,5 +1,5 @@
 .form {
-	max-width: 595px;
+	width: 100%;
 	margin: 0 auto;
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
@@ -26,25 +26,50 @@
 			padding: 15px;
 
 			&:focus {
-				outline-color: #ff5931;
+				outline-color: var(--color-primary);
 			}
+		}
+
+		& input[type='file'] {
+			padding-left: 56px;
 		}
 
 		& textarea {
 			height: 134px;
 		}
+
+		& .uploaeded {
+			position: relative;
+			width: fit-content;
+			border-radius: 6px;
+			padding: 1px;
+			background: linear-gradient(360deg, #ff5931 0%, #171717 100%);
+
+			& button {
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				background: rgb(255, 255, 255, 0.5);
+				display: grid;
+				place-content: center;
+				position: absolute;
+				top: 5px;
+				right: 5px;
+				z-index: 1;
+			}
+		}
 	}
 
 	& .send_button {
 		height: 56px;
-		background: #ff5931;
+		background: var(--color-primary);
 		color: var(--color-white);
 		font-size: 18px;
 		border-radius: 10px;
 	}
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
 	.form {
 		grid-template-columns: repeat(2, 1fr);
 	}

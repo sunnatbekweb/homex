@@ -1,4 +1,4 @@
-.active {
+.active_drawer {
 	background: #171717 !important;
 }
 
@@ -27,47 +27,18 @@
 			gap: 10px;
 		}
 
-		& .nav {
-			display: none;
-
-			&__list {
-				display: flex;
-				align-items: center;
-				column-gap: 24px;
-
-				&--item {
-					&-link {
-						transition: color 0.3s;
-						&:hover {
-							color: #ff5931;
-						}
-					}
-				}
-			}
+		&::after {
+			display: none !important;
 		}
 	}
+}
+
+.header_scrolled {
+	background: rgb(0, 0, 0, 0.8);
 }
 
 @media screen and (min-width: 768px) {
 	.header {
 		height: 100px;
-
-		&__container {
-			& .nav {
-				display: block;
-			}
-		}
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	.header {
-		&__container {
-			& .nav {
-				&__list {
-					column-gap: 42px;
-				}
-			}
-		}
 	}
 }

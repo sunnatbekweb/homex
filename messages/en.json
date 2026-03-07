@@ -1,0 +1,48 @@
+{
+	"nav": {
+		"home": "Home",
+		"services": "Services",
+		"guarantee": "FAQ",
+		"reviews": "Reviews",
+		"contact": "Contact"
+	},
+	"hero": {
+		"title": "Trusted Experts for Home Repairs",
+		"text": "Book trusted home service professionals in minutes. Whether it’s a small repair or a major fix, our experts deliver reliable, affordable, and timely solutions tailored to your needs.",
+		"button1": "Hire now",
+		"button2": "Learn more",
+		"bottom_text": "Trusted already by"
+	},
+	"logos_title": "Trusted by top innovative teams",
+	"services_title": "Complete home service solutions you can trust",
+	"statistics": {
+		"title": "Trusted by Homeowners Every Day",
+		"subtitle": "We take pride in delivering reliable and professional home services. Our growing number of satisfied customers and completed projects shows our commitment to quality and trust.",
+		"repairs": "Repairs Completed",
+		"professionals": "Verified Professionals",
+		"support": "Customer Support",
+		"satisfaction": "Customer Satisfaction"
+	},
+	"reviews": {
+		"title": "What Our Customers Say",
+		"text": "We are proud to help homeowners with reliable and professional services. Here’s what some of our satisfied customers say about their experience with our experts."
+	},
+	"contact": {
+		"title": "We are always ready to help you and answer your questions",
+		"call": "Call Center",
+		"location": "Our Location",
+		"address": "18/35 Katta Khirmontepa, Uchtepa, Toshkent",
+		"social": "Social Network",
+		"name_label": "Hello my name is:",
+		"name_placeholder": "Name",
+		"email_label": "Here is my email:",
+		"email_placeholder": "Email",
+		"service_label": "Tell us what service you want?",
+		"service_placeholder": "Select service type",
+		"file": "Upload images that describe the problem:",
+		"note_label": "What else do you want?",
+		"note_placeholder": "Extra notes",
+		"send": "Send"
+	},
+	"footer_text": "All rights reserved."
+}
