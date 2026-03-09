@@ -12,7 +12,7 @@ export const Footer = () => {
 				</div>
 				<div className={styles.bottom}>
 					<span>{new Date().getFullYear()} Copyright</span>
-					<span>&copy; Homex.</span> <span>{t('footer_text')}</span>
+					<strong>&copy; Homex.</strong> <span>{t('footer_text')}</span>
 				</div>
 			</div>
 		</footer>

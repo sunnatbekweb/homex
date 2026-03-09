@@ -91,6 +91,8 @@ export const Header = () => {
 				<button
 					onClick={() => setDrawer(!drawer)}
 					className="md:hidden"
+					aria-label='Menu button'
+					aria-labelledby='Mobile menu open close'
 				>
 					{drawer ? <X size={24} /> : <Menu size={24} />}
 				</button>

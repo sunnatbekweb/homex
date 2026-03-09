@@ -1,5 +1,11 @@
 'use client'
 
+import { useGetServices } from '@/hooks/api.query'
+import { TLocale } from '@/types'
+import { useLocale } from 'next-intl'
+import { useEffect, useState } from 'react'
+import { Autoplay } from 'swiper/modules'
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -7,10 +13,6 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import Image from 'next/image'
 import 'swiper/css'
 
-import { useGetServices } from '@/hooks/api.query'
-import { TLocale } from '@/types'
-import { useLocale } from 'next-intl'
-import { useState } from 'react'
 import { ServiceImageModal } from '../modal/ServiceImageModal'
 import './style.scss'
 
@@ -19,13 +21,24 @@ export const ServiceSlide = () => {
 	const locale = useLocale() as TLocale
 	const [activeImage, setActiveImage] = useState<string | null>(null)
 
+	useEffect(() => {
+		if (activeImage && document) {
+			document.body.style.overflowY = 'hidden'
+		} else {
+			document.body.style.overflowY = 'auto'
+		}
+	}, [activeImage])
+
 	return (
 		<div>
 			<Swiper
-				slidesPerView={1.75}
+				slidesPerView={1}
 				spaceBetween={15}
 				loop
 				breakpoints={{
+					375: {
+						slidesPerView: 1.9
+					},
 					640: {
 						slidesPerView: 2.5
 					},
@@ -33,6 +46,10 @@ export const ServiceSlide = () => {
 						slidesPerView: 4.5
 					}
 				}}
+				autoplay={{
+					delay: 2000
+				}}
+				modules={[Autoplay]}
 				className="service_slide"
 			>
 				{data?.map((service, index) => (
@@ -48,9 +65,14 @@ export const ServiceSlide = () => {
 							className="w-full aspect-square object-cover"
 							onClick={() => setActiveImage(service.image)}
 						/>
-						<div className="absolute left-5 bottom-5 px-2.5 py-1.25 rounded-md bg-primary text-sm leading-none text-white line-clamp-1 max-w-3/5">
-							{service?.[`title_${locale}`]}
-						</div>
+						<strong
+							title={service?.[`title_${locale}`]}
+							className="absolute left-5 bottom-5 px-2.5 py-1.25 rounded-md bg-primary text-sm leading-none text-white line-clamp-1 w-fit max-w-3/5"
+						>
+							{service?.[`title_${locale}`].length > 15
+								? service?.[`title_${locale}`].slice(0, 15) + '...'
+								: service?.[`title_${locale}`]}
+						</strong>
 						<div className="bg-black/20 w-full h-full absolute top-0 left-0 pointer-events-none"></div>
 					</SwiperSlide>
 				))}

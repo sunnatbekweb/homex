@@ -20,6 +20,7 @@ export const ContactInfo = () => {
 					<a
 						href="tel:+998(87)105-16-16"
 						className="text-[#B1B1B1]"
+						aria-label="Phone number +998 87 105 16 16"
 					>
 						+998 87 105 16 16
 					</a>
@@ -27,6 +28,7 @@ export const ContactInfo = () => {
 					<a
 						href="tel:+998(87)108-16-16"
 						className="text-[#B1B1B1]"
+						aria-label="Phone number +998 87 108 16 16"
 					>
 						+998 87 108 16 16
 					</a>
@@ -48,7 +50,7 @@ export const ContactInfo = () => {
 					<br />
 					<a
 						href="https://t.me/homexs_admin"
-						target='_blank'
+						target="_blank"
 						className="text-[#B1B1B1]"
 					>
 						@homexs_admin
@@ -62,30 +64,35 @@ export const ContactInfo = () => {
 						<a
 							href="https://t.me/"
 							className="text-[#B1B1B1] group"
+							aria-label="Telegram link"
 						>
 							<Telegram />
 						</a>
 						<a
 							href="https://instagram.com"
 							className="text-[#B1B1B1] group"
+							aria-label="Instagram link"
 						>
 							<Instagram />
 						</a>
 						<a
-							href="https://mail.google.com"
+							href="mailto:homexsuzbek@gmail.com"
 							className="text-[#B1B1B1] group"
+							aria-label="Mail to homexsuzbek@gmail.com"
 						>
 							<Mail />
 						</a>
 						<a
 							href="https://youtube.com"
 							className="text-[#B1B1B1] group"
+							aria-label="YouTube link"
 						>
 							<Youtube />
 						</a>
 						<a
 							href="https://facebook.com"
 							className="text-[#B1B1B1] group"
+							aria-label="Facebook link"
 						>
 							<Facebook />
 						</a>

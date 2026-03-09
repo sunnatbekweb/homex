@@ -40,6 +40,7 @@
 		"service_label": "Qaysi xizmat kerak?",
 		"service_placeholder": "Xizmat turini tanlang",
 		"file": "Muammoni tasvirlaydigan rasmlarni yuklang.",
+		"file_placeholder": "Rasm yuklash",
 		"note_label": "Yana nima qo‘shmoqchisiz?",
 		"note_placeholder": "Qo‘shimcha izohlar",
 		"send": "Yuborish"

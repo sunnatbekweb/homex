@@ -146,7 +146,7 @@ export const Form = () => {
 						className="w-full"
 					/>
 					<div className="w-[calc(100%-56px)] bg-[#272727] group-hover:text-primary text-[#B1B1B1] absolute left-14 top-1/2 -translate-y-1/2 pointer-events-none">
-						Upload picture
+						{t("file_placeholder")}
 					</div>
 				</div>
 				<div className="flex gap-3">

@@ -34,9 +34,10 @@ main::after {
 	position: absolute;
 	top: 65%;
 	left: -35%;
-	z-index: 0;
+	z-index: -1;
 	transform: translateY(-65%);
-	width: 1240px;
+	max-width: 1240px;
+	width: 100%;
 	aspect-ratio: 1 / 1;
 	background: radial-gradient(
 		43.73% 43.73% at 50% 50%,
@@ -50,8 +51,9 @@ main::before {
 	position: absolute;
 	top: 100vh;
 	right: -15%;
-	z-index: 0;
-	width: 725px;
+	z-index: -1;
+	max-width: 725px;
+	width: 100%;
 	aspect-ratio: 1 / 1;
 	background: radial-gradient(
 		43.73% 43.73% at 50% 50%,
