@@ -47,7 +47,8 @@ export const ContactInfo = () => {
 					<br />
 					<br />
 					<a
-						href="https://t.me/@homexs_admin"
+						href="https://t.me/homexs_admin"
+						target='_blank'
 						className="text-[#B1B1B1]"
 					>
 						@homexs_admin

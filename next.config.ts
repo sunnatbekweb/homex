@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
   images: {
 		remotePatterns: [
 			{
-				protocol: 'http',
+				protocol: 'https',
 				hostname: 'api.homexs.uz',
 				pathname: '/**'
 			}

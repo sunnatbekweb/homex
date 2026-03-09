@@ -35,18 +35,18 @@ export const NavDrawer = ({
 				</li>
 				<li>
 					<Link
-						href={'#guarantee'}
+						href={'#reviews'}
 						onClick={close}
 					>
-						{t('guarantee')}
+						{t('reviews')}
 					</Link>
 				</li>
 				<li>
 					<Link
-						href={'#rewiews'}
+						href={'#faq'}
 						onClick={close}
 					>
-						{t('reviews')}
+						{t('guarantee')}
 					</Link>
 				</li>
 				<li>
