@@ -9,7 +9,6 @@ import Image from 'next/image'
 export const Hero = () => {
 	const t = useTranslations()
 	const { data } = useGetHeroVideo()
-	console.log(data)
 
 	return (
 		<section className="hero h-screen relative">
