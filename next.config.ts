@@ -2,9 +2,10 @@ import type { NextConfig } from 'next'
 import createNextIntlPlugin from 'next-intl/plugin'
 
 const nextConfig: NextConfig = {
-	/* config options here */
-	reactCompiler: true,
-	images: {
+  /* config options here */
+  output: "standalone",
+  reactCompiler: true,
+  images: {
 		remotePatterns: [
 			{
 				protocol: 'http',
@@ -13,7 +14,7 @@ const nextConfig: NextConfig = {
 			}
 		]
 	}
-}
+};
 
 const withNextIntil = createNextIntlPlugin('./src/config/i18n/request.ts')
 export default withNextIntil(nextConfig)
