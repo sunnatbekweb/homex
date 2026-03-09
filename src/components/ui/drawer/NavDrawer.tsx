@@ -30,7 +30,7 @@ export const NavDrawer = ({
 				</li>
 				<li>
 					<Link
-						href={'#service'}
+						href={'#services'}
 						onClick={close}
 					>
 						{t('services')}

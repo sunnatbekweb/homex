@@ -46,22 +46,6 @@ main::after {
 	);
 }
 
-main::before {
-	content: '';
-	position: absolute;
-	top: 100vh;
-	right: -15%;
-	z-index: -1;
-	max-width: 725px;
-	width: 100%;
-	aspect-ratio: 1 / 1;
-	background: radial-gradient(
-		43.73% 43.73% at 50% 50%,
-		rgba(255, 89, 49, 0.1) 0%,
-		rgba(255, 89, 49, 0) 100%
-	);
-}
-
 .container {
 	margin: 0 auto;
 	padding: 0 16px;
@@ -160,6 +144,23 @@ path {
 	transition: fill 0.3s;
 }
 
+@media screen and (min-width: 768px) {
+	main::before {
+		content: '';
+		position: absolute;
+		top: 100vh;
+		right: -15%;
+		z-index: -1;
+		max-width: 725px;
+		width: 100%;
+		aspect-ratio: 1 / 1;
+		background: radial-gradient(
+			43.73% 43.73% at 50% 50%,
+			rgba(255, 89, 49, 0.1) 0%,
+			rgba(255, 89, 49, 0) 100%
+		);
+	}
+}
 @media screen and (min-width: 1024px) {
 	.container {
 		max-width: 1240px;

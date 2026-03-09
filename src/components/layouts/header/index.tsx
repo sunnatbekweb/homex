@@ -30,6 +30,7 @@ export const Header = () => {
 				<Link
 					href={'/'}
 					className={styles.logo}
+					onClick={() => window?.scrollTo(0, 0)}
 				>
 					<Image
 						src={'/favicon.ico'}
@@ -81,9 +82,7 @@ export const Header = () => {
 									onClick={() => setIsOpen(false)}
 									className="flex justify-center text-center gap-x-2 uppercase py-1 text-sm"
 								>
-									<span className="text-[#171717] hover:text-primary">
-										{l}
-									</span>
+									<span className="text-[#171717] hover:text-primary">{l}</span>
 								</Link>
 							))}
 					</div>
@@ -91,8 +90,8 @@ export const Header = () => {
 				<button
 					onClick={() => setDrawer(!drawer)}
 					className="md:hidden"
-					aria-label='Menu button'
-					aria-labelledby='Mobile menu open close'
+					aria-label="Menu button"
+					aria-labelledby="Mobile menu open close"
 				>
 					{drawer ? <X size={24} /> : <Menu size={24} />}
 				</button>

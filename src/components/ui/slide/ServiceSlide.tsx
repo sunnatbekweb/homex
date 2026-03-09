@@ -34,7 +34,8 @@ export const ServiceSlide = () => {
 			<Swiper
 				slidesPerView={1}
 				spaceBetween={15}
-				loop
+				loop={data ? data?.length > 5 : true}
+				speed={1000}
 				breakpoints={{
 					375: {
 						slidesPerView: 1.9
@@ -47,7 +48,7 @@ export const ServiceSlide = () => {
 					}
 				}}
 				autoplay={{
-					delay: 2000
+					delay: 1000
 				}}
 				modules={[Autoplay]}
 				className="service_slide"
@@ -67,11 +68,9 @@ export const ServiceSlide = () => {
 						/>
 						<strong
 							title={service?.[`title_${locale}`]}
-							className="absolute left-5 bottom-5 px-2.5 py-1.25 rounded-md bg-primary text-sm leading-none text-white line-clamp-1 w-fit max-w-3/5"
+							className="absolute left-5 bottom-5 px-2.5 py-1.25 rounded-md bg-primary text-sm leading-none text-white w-fit"
 						>
-							{service?.[`title_${locale}`].length > 15
-								? service?.[`title_${locale}`].slice(0, 15) + '...'
-								: service?.[`title_${locale}`]}
+							{service?.[`title_${locale}`]}
 						</strong>
 						<div className="bg-black/20 w-full h-full absolute top-0 left-0 pointer-events-none"></div>
 					</SwiperSlide>
