@@ -1,5 +1,6 @@
 'use client'
 
+import { Link } from '@/config/i18n/routing'
 import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 import styles from './style.module.scss'
@@ -23,12 +24,13 @@ export const Nav = () => {
 		<nav className={styles.nav}>
 			<ul className={styles.nav__list}>
 				<li className={styles['nav__list--item']}>
-					<a
-						href={'#top'}
+					<Link
+						href={'/'}
+						onClick={() => window?.scrollTo(0, 0)}
 						className={`${styles['nav__list--item-link']} ${hash === '#top' || hash === '' ? styles.active : ''}`}
 					>
 						{t('home')}
-					</a>
+					</Link>
 				</li>
 				<li className={styles['nav__list--item']}>
 					<a

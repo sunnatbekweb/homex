@@ -19,8 +19,11 @@ export const NavDrawer = ({
 			<ul className="p-5 flex flex-col gap-5">
 				<li>
 					<Link
-						href={'#top'}
-						onClick={close}
+						href={'/'}
+						onClick={() => {
+							window?.scrollTo(0, 0)
+							close()
+						}}
 					>
 						{t('home')}
 					</Link>
