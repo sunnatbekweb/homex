@@ -10,13 +10,17 @@ import 'swiper/css'
 import { useGetServices } from '@/hooks/api.query'
 import { TLocale } from '@/types'
 import { useLocale } from 'next-intl'
+import { useState } from 'react'
+import { ServiceImageModal } from '../modal/ServiceImageModal'
 import './style.scss'
 
 export const ServiceSlide = () => {
 	const { data } = useGetServices()
 	const locale = useLocale() as TLocale
+	const [activeImage, setActiveImage] = useState<string | null>(null)
+
 	return (
-		<div className="relative">
+		<div>
 			<Swiper
 				slidesPerView={1.75}
 				spaceBetween={15}
@@ -39,17 +43,23 @@ export const ServiceSlide = () => {
 						<Image
 							src={service?.image}
 							width={300}
-							height={230}
+							height={260}
 							alt={service?.[`title_${locale}`]}
-							className="w-full"
+							className="w-full aspect-square object-cover"
+							onClick={() => setActiveImage(service.image)}
 						/>
-						<div className="absolute left-5 bottom-5 px-2.5 py-1.25 rounded-md bg-primary text-sm leading-none text-white line-clamp-1 w-3/4">
+						<div className="absolute left-5 bottom-5 px-2.5 py-1.25 rounded-md bg-primary text-sm leading-none text-white line-clamp-1 max-w-3/5">
 							{service?.[`title_${locale}`]}
 						</div>
-						<div className="bg-black/20 w-full h-full absolute top-0 left-0"></div>
+						<div className="bg-black/20 w-full h-full absolute top-0 left-0 pointer-events-none"></div>
 					</SwiperSlide>
 				))}
 			</Swiper>
+			<ServiceImageModal
+				image={activeImage || ''}
+				isVisible={!!activeImage}
+				close={() => setActiveImage(null)}
+			/>
 		</div>
 	)
 }

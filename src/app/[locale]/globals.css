@@ -25,16 +25,51 @@ body {
 	overflow-x: hidden;
 }
 
+main {
+	position: relative;
+}
+
+main::after {
+	content: '';
+	position: absolute;
+	top: 65%;
+	left: -35%;
+	z-index: 0;
+	transform: translateY(-65%);
+	width: 1240px;
+	aspect-ratio: 1 / 1;
+	background: radial-gradient(
+		43.73% 43.73% at 50% 50%,
+		rgba(255, 89, 49, 0.1) 0%,
+		rgba(255, 89, 49, 0) 100%
+	);
+}
+
+main::before {
+	content: '';
+	position: absolute;
+	top: 100vh;
+	right: -15%;
+	z-index: 0;
+	width: 725px;
+	aspect-ratio: 1 / 1;
+	background: radial-gradient(
+		43.73% 43.73% at 50% 50%,
+		rgba(255, 89, 49, 0.1) 0%,
+		rgba(255, 89, 49, 0) 100%
+	);
+}
+
 .container {
 	margin: 0 auto;
 	padding: 0 16px;
-	border-left: 1px solid #505050;
-	border-right: 1px solid #505050;
-	position: relative;
-	z-index: 1;
+	/* border-left: 1px solid #505050;
+	border-right: 1px solid #505050; */
+	/* position: relative; */
+	/* z-index: 1; */
 }
 
-.container::after {
+/* .container::after {
 	content: '';
 	width: 1px;
 	height: 100%;
@@ -44,7 +79,7 @@ body {
 	z-index: -1;
 	transform: translateX(-50%);
 	background: #505050;
-}
+} */
 
 .hero {
 	background-size: cover;
@@ -61,7 +96,7 @@ body {
 	position: absolute;
 	bottom: 0;
 	background: linear-gradient(180deg, rgba(23, 23, 23, 0) 6.78%, #171717 100%);
-	border-bottom: 1px solid #505050;
+	/* border-bottom: 1px solid #505050; */
 }
 
 .gradient {

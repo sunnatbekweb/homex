@@ -8,10 +8,10 @@
 	display: flex;
 	align-items: center;
 	background: linear-gradient(0deg, rgba(23, 23, 23, 0) 0%, #171717 100%);
-	border-bottom: 1px solid #505050;
+	// border-bottom: 1px solid #505050;
 	position: fixed;
 	top: 0;
-	z-index: 10;
+	z-index: 2;
 	transition: background 0.3s;
 
 	&__container {

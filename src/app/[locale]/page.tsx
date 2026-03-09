@@ -87,7 +87,7 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<div className="py-5 md:py-10 bg-[#171717]"></div>
+			{/* <div className="py-5 md:py-10 bg-[#171717]"></div> */}
 		</main>
 	)
 }
