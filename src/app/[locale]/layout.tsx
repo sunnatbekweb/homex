@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: 'Homex',
 		description:
-			'Trusted Experts for Home Repairs Book trusted home service professionals in minutes. Whether it’s a small repair or a major fix, our experts deliver reliable, affordable, and timely solutions tailored to your needs.',
+			'HomeX — uy va ofislar uchun texnik servis xizmati. Uy xizmatlari uchun ishonchli mutaxassislarni bir necha daqiqada chaqiring. Kichik ta’mirlash yoki katta muammo bo‘lishidan qat’i nazar, mutaxassislarimiz sizning ehtiyojlaringizga mos ravishda ishonchli, arzon va o‘z vaqtida yechimlar taqdim etadi.',
 		url: 'https://homexs.com',
 		siteName: 'Homex',
 		images: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 				url: '/icons/logo_text.svg',
 				width: 1200,
 				height: 630,
-				alt: 'Trusted Experts for Home Repairs Book trusted home service professionals in minutes.'
+				alt: 'HomeX — uy va ofislar uchun texnik servis xizmati. Uy xizmatlari uchun ishonchli mutaxassislarni bir necha daqiqada chaqiring.'
 			}
 		],
 		type: 'website'
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 		card: 'summary_large_image',
 		title: 'Homex',
 		description:
-			'Trusted Experts for Home Repairs Book trusted home service professionals in minutes. Whether it’s a small repair or a major fix, our experts deliver reliable, affordable, and timely solutions tailored to your needs.',
+			'HomeX — uy va ofislar uchun texnik servis xizmati. Uy xizmatlari uchun ishonchli mutaxassislarni bir necha daqiqada chaqiring. Kichik ta’mirlash yoki katta muammo bo‘lishidan qat’i nazar, mutaxassislarimiz sizning ehtiyojlaringizga mos ravishda ishonchli, arzon va o‘z vaqtida yechimlar taqdim etadi.',
 		images: ['/icons/logo_text.svg']
 	}
 }

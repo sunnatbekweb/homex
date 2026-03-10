@@ -25,13 +25,12 @@ export const Testimonials = () => {
 						/>
 						<div className="flex flex-col">
 							<strong>{item.customer_name}</strong>
-							<span className="text-sm text-[#B1B1B1]">Plumbing Service</span>
+							<span className="text-sm text-[#B1B1B1]">
+								{item?.[`title_${locale}`]}
+							</span>
 						</div>
 					</div>
 					<div className="mt-3 flex flex-col gap-y-2.5">
-						<strong className="font-semibold">
-							{item?.[`title_${locale}`]}
-						</strong>
 						<p className="text-sm leading-none">
 							{item?.[`comment_${locale}`]}
 						</p>
