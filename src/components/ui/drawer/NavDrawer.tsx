@@ -1,4 +1,5 @@
 import { Link } from '@/config/i18n/routing'
+import { useIntersection } from '@/hooks/useIntersection'
 import { useTranslations } from 'next-intl'
 
 export const NavDrawer = ({
@@ -9,6 +10,7 @@ export const NavDrawer = ({
 	close: () => void
 }) => {
 	const t = useTranslations('nav')
+	const { activeSection } = useIntersection()
 
 	return (
 		<div
@@ -22,6 +24,7 @@ export const NavDrawer = ({
 							window?.scrollTo(0, 0)
 							close()
 						}}
+						className={`${activeSection === 'home' ? 'text-primary' : ''} duration-200`}
 					>
 						{t('home')}
 					</Link>
@@ -30,6 +33,7 @@ export const NavDrawer = ({
 					<Link
 						href={'#services'}
 						onClick={close}
+						className={`${activeSection === 'services' ? 'text-primary' : ''} duration-200`}
 					>
 						{t('services')}
 					</Link>
@@ -38,6 +42,7 @@ export const NavDrawer = ({
 					<Link
 						href={'#reviews'}
 						onClick={close}
+						className={`${activeSection === 'reviews' ? 'text-primary' : ''} duration-200`}
 					>
 						{t('reviews')}
 					</Link>
@@ -46,6 +51,7 @@ export const NavDrawer = ({
 					<Link
 						href={'#faq'}
 						onClick={close}
+						className={`${activeSection === 'faq' ? 'text-primary' : ''} duration-200`}
 					>
 						{t('guarantee')}
 					</Link>
@@ -54,6 +60,7 @@ export const NavDrawer = ({
 					<Link
 						href={'#contact'}
 						onClick={close}
+						className={`${activeSection === 'contact' ? 'text-primary' : ''} duration-200`}
 					>
 						{t('contact')}
 					</Link>

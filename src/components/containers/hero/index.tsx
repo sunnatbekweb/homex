@@ -11,7 +11,10 @@ export const Hero = () => {
 	const { data } = useGetHeroVideo()
 
 	return (
-		<section className="hero h-screen relative">
+		<section
+			id="home"
+			className="hero h-screen relative"
+		>
 			<video
 				poster={data?.poster}
 				src={data?.video}
