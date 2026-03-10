@@ -6,7 +6,8 @@ export const routing = defineRouting({
 	locales: ['uz', 'ru', 'en'] as const,
 
 	// Used when no locale matches
-	defaultLocale: 'uz'
+	defaultLocale: 'uz',
+	localeDetection: false
 })
 
 // Lightweight wrappers around Next.js' navigation APIs

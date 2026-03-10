@@ -22,6 +22,7 @@ export const Testimonials = () => {
 							height={50}
 							alt={item.customer_name}
 							className="rounded-full w-12.5 aspect-square"
+							loading="lazy"
 						/>
 						<div className="flex flex-col">
 							<strong>{item.customer_name}</strong>

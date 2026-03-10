@@ -23,6 +23,7 @@ export const Services = () => {
 										width={24}
 										height={24}
 										alt="Service icon"
+										loading="lazy"
 									/>
 								</div>
 								<div className="mt-3 flex flex-col gap-y-2.5">
@@ -45,7 +46,7 @@ export const Services = () => {
 					)
 				})}
 			</div>
-			<ServiceSlide />
+			<ServiceSlide data={data || []} />
 		</>
 	)
 }
