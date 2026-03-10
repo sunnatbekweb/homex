@@ -89,7 +89,7 @@ export const Form = () => {
 				}}
 				render={({ field }) => (
 					<label className={styles.label}>
-						<span>Here is my phone number:</span>
+						<span>{t("email_label")}</span>
 						<IMaskInput
 							{...field}
 							mask="+998 (00) 000-00-00"

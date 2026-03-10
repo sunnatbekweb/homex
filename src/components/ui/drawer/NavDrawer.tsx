@@ -1,5 +1,5 @@
-import { Link, usePathname } from '@/config/i18n/routing'
-import { useLocale, useTranslations } from 'next-intl'
+import { Link } from '@/config/i18n/routing'
+import { useTranslations } from 'next-intl'
 
 export const NavDrawer = ({
 	drawer,
@@ -9,8 +9,6 @@ export const NavDrawer = ({
 	close: () => void
 }) => {
 	const t = useTranslations('nav')
-	const pathname = usePathname()
-	const locale = useLocale()
 
 	return (
 		<div
@@ -62,7 +60,7 @@ export const NavDrawer = ({
 				</li>
 			</ul>
 
-			<div className="px-5 py-5.5 flex items-center gap-5">
+			{/* <div className="px-5 py-5.5 flex items-center gap-5">
 				<Link
 					href={pathname}
 					locale="uz"
@@ -84,7 +82,7 @@ export const NavDrawer = ({
 				>
 					ENG
 				</Link>
-			</div>
+			</div> */}
 		</div>
 	)
 }

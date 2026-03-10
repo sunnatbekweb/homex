@@ -35,7 +35,7 @@
 		"social": "Social Network",
 		"name_label": "Hello my name is:",
 		"name_placeholder": "Name",
-		"email_label": "Here is my email:",
+		"email_label": "Here is my phone number:",
 		"email_placeholder": "Email",
 		"service_label": "Tell us what service you want?",
 		"service_placeholder": "Select service type",

@@ -53,7 +53,7 @@ export default async function RootLayout({
 	const messages = await getMessages()
 
 	return (
-		<html lang="en">
+		<html lang="uz">
 			<body className={`${exo_2.variable} antialiased`}>
 				<NextIntlClientProvider messages={messages}>
 					<QueryProvider>
