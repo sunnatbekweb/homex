@@ -79,7 +79,6 @@ export default async function RootLayout({
 	params: Promise<{ locale: string }>
 }) {
 	const { locale } = await params
-	// use() можно использовать для серверных компонентов
 	const messages = getMessages({ locale: locale })
 
 	return (
