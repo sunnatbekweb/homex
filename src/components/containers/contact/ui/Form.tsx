@@ -9,7 +9,7 @@ import { useState } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { IMaskInput } from 'react-imask'
 import { toast } from 'react-toastify'
-import styles from './style.module.scss'
+import styles from '../style.module.scss'
 
 export const Form = () => {
 	const t = useTranslations('contact')

@@ -1,6 +1,6 @@
 import { Contact } from '@/components/containers/contact'
 import { Faqs } from '@/components/containers/faqs'
-import { Hero } from '@/components/containers/hero'
+import { Hero } from '@/components/containers/hero/HomeHero'
 import { Services } from '@/components/containers/services'
 import { Statistics } from '@/components/containers/statistics'
 import { Testimonials } from '@/components/containers/testimonials'
