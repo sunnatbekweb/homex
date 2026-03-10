@@ -45,6 +45,14 @@ export const Header = () => {
 				</div>
 				<div className="md:hidden flex items-center gap-3.75">
 					<LanguageDropdown />
+					<a href="tel:+998(87)105-16-16">
+						<Image
+							src={'/icons/call.svg'}
+							width={20}
+							height={20}
+							alt="phone"
+						/>
+					</a>
 					<button
 						onClick={() => setDrawer(!drawer)}
 						aria-label="Menu button"

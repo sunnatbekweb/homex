@@ -1,5 +1,4 @@
-import { ContactInfo } from '@/components/containers/contact-form/ContactInfo'
-import { Form } from '@/components/containers/contact-form/Form'
+import { Contact } from '@/components/containers/contact'
 import { Faqs } from '@/components/containers/faqs'
 import { Hero } from '@/components/containers/hero'
 import { Services } from '@/components/containers/services'
@@ -76,17 +75,7 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section
-				id="contact"
-				className="border-b border-[#505050]"
-			>
-				<div className="container">
-					<div className="grid gap-y-12.5 gap-x-10 md:grid-cols-2 pt-15 md:pt-25 pb-25 md:pb-50">
-						<ContactInfo />
-						<Form />
-					</div>
-				</div>
-			</section>
+			<Contact id="contact" />
 			{/* <div className="py-5 md:py-10 bg-[#171717]"></div> */}
 		</main>
 	)

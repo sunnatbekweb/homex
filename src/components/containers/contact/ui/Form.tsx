@@ -89,7 +89,7 @@ export const Form = () => {
 				}}
 				render={({ field }) => (
 					<label className={styles.label}>
-						<span>{t("email_label")}</span>
+						<span>{t('email_label')}</span>
 						<IMaskInput
 							{...field}
 							mask="+998 (00) 000-00-00"
@@ -146,7 +146,7 @@ export const Form = () => {
 						className="w-full"
 					/>
 					<div className="w-[calc(100%-56px)] bg-[#272727] group-hover:text-primary text-[#B1B1B1] absolute left-14 top-1/2 -translate-y-1/2 pointer-events-none">
-						{t("file_placeholder")}
+						{t('file_placeholder')}
 					</div>
 				</div>
 				<div className="flex gap-3">
@@ -184,7 +184,7 @@ export const Form = () => {
 				></textarea>
 			</label>
 			<button className={`${styles.send_button} lg:col-span-2`}>
-				{isPending ? '...' : t('send')}
+				{isPending ? 'Sending...' : t('send')}
 			</button>
 		</form>
 	)

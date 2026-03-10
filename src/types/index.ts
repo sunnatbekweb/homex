@@ -7,12 +7,22 @@ export interface IContact {
 
 export interface IService {
 	id: number
-	icon: string
-	image: string
+	icons: IServiceIcon[]
+	images: ISeriveImage[]
 	title_en: string
 	title_uz: string
 	title_ru: string
 	features: IServiceFeatures[]
+}
+
+interface IServiceIcon {
+	icon: string
+	id: number
+}
+
+interface ISeriveImage {
+	image: string
+	id: number
 }
 
 interface IServiceFeatures {

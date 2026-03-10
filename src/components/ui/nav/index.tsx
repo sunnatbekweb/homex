@@ -24,36 +24,36 @@ export const Nav = () => {
 					</Link>
 				</li>
 				<li className={styles['nav__list--item']}>
-					<a
-						href={'#services'}
+					<Link
+						href={'/#services'}
 						className={`${styles['nav__list--item-link']} ${activeSection === 'services' ? styles.active : ''}`}
 					>
 						{t('services')}
-					</a>
+					</Link>
 				</li>
 				<li className={styles['nav__list--item']}>
-					<a
-						href={'#reviews'}
+					<Link
+						href={'/#reviews'}
 						className={`${styles['nav__list--item-link']} ${activeSection === 'reviews' ? styles.active : ''}`}
 					>
 						{t('reviews')}
-					</a>
+					</Link>
 				</li>
 				<li className={styles['nav__list--item']}>
-					<a
-						href={'#faq'}
+					<Link
+						href={'/#faq'}
 						className={`${styles['nav__list--item-link']} ${activeSection === 'faq' ? styles.active : ''}`}
 					>
 						{t('guarantee')}
-					</a>
+					</Link>
 				</li>
 				<li className={styles['nav__list--item']}>
-					<a
-						href={'#contact'}
+					<Link
+						href={'/#contact'}
 						className={`${styles['nav__list--item-link']} ${activeSection === 'contact' ? styles.active : ''}`}
 					>
 						{t('contact')}
-					</a>
+					</Link>
 				</li>
 			</ul>
 		</nav>

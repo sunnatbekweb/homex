@@ -31,7 +31,7 @@ export const NavDrawer = ({
 				</li>
 				<li>
 					<Link
-						href={'#services'}
+						href={'/#services'}
 						onClick={close}
 						className={`${activeSection === 'services' ? 'text-primary' : ''} duration-200`}
 					>
@@ -40,7 +40,7 @@ export const NavDrawer = ({
 				</li>
 				<li>
 					<Link
-						href={'#reviews'}
+						href={'/#reviews'}
 						onClick={close}
 						className={`${activeSection === 'reviews' ? 'text-primary' : ''} duration-200`}
 					>
@@ -49,7 +49,7 @@ export const NavDrawer = ({
 				</li>
 				<li>
 					<Link
-						href={'#faq'}
+						href={'/#faq'}
 						onClick={close}
 						className={`${activeSection === 'faq' ? 'text-primary' : ''} duration-200`}
 					>
@@ -58,7 +58,7 @@ export const NavDrawer = ({
 				</li>
 				<li>
 					<Link
-						href={'#contact'}
+						href={'/#contact'}
 						onClick={close}
 						className={`${activeSection === 'contact' ? 'text-primary' : ''} duration-200`}
 					>

@@ -17,14 +17,21 @@ export const Services = () => {
 					return (
 						<Fragment key={index}>
 							<div className="w-full md:max-w-57.5 lg:max-w-75 xl:max-w-97.5 card">
-								<div className="w-9.5 h-9.5 rounded-md bg-primary flex items-center justify-center">
-									<Image
-										src={service?.icon}
-										width={24}
-										height={24}
-										alt="Service icon"
-										loading="lazy"
-									/>
+								<div className="flex items-center gap-x-2.5">
+									{service?.icons?.map((item) => (
+										<div
+											key={item?.id}
+											className="w-9.5 h-9.5 rounded-md bg-primary flex items-center justify-center"
+										>
+											<Image
+												src={item?.icon}
+												width={30}
+												height={30}
+												alt="Service icon"
+												loading="lazy"
+											/>
+										</div>
+									))}
 								</div>
 								<div className="mt-3 flex flex-col gap-y-2.5">
 									<strong className="font-semibold leading-tight">
