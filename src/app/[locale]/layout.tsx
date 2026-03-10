@@ -1,7 +1,6 @@
 import { Footer } from '@/components/layouts/footer'
 import { Header } from '@/components/layouts/header'
 import { QueryProvider } from '@/providers/queryClientProvider'
-import { TLocale } from '@/types'
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
@@ -17,7 +16,7 @@ const exo_2 = Exo_2({
 export async function generateMetadata({
 	params
 }: {
-	params: Promise<{ locale: TLocale }>
+	params: Promise<{ locale: string }>
 }): Promise<Metadata> {
 	const { locale } = await params
 
@@ -75,12 +74,13 @@ export async function generateMetadata({
 export default async function RootLayout({
 	children,
 	params
-}: Readonly<{
+}: {
 	children: React.ReactNode
-	params: Promise<{ locale: TLocale }>
-}>) {
-	const messages = await getMessages()
+	params: Promise<{ locale: string }>
+}) {
 	const { locale } = await params
+	// use() можно использовать для серверных компонентов
+	const messages = getMessages({ locale: locale })
 
 	return (
 		<html lang={locale}>
