@@ -9,10 +9,14 @@ export interface IService {
 	id: number
 	icons: IServiceIcon[]
 	images: ISeriveImage[]
+	cover_image: string
 	title_en: string
 	title_uz: string
 	title_ru: string
 	features: IServiceFeatures[]
+	content_uz: string
+	content_ru: string
+	content_en: string
 }
 
 interface IServiceIcon {
@@ -20,7 +24,7 @@ interface IServiceIcon {
 	id: number
 }
 
-interface ISeriveImage {
+export interface ISeriveImage {
 	image: string
 	id: number
 }

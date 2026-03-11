@@ -11,6 +11,9 @@ export const getHeroVideo = async () =>
 export const getServices = async () =>
 	await api.get(`/services/`).then(res => res.data)
 
+export const getServiceById = async (id: string) =>
+	await api.get(`/services/${id}/`).then(res => res.data)
+
 export const getStatistics = async () =>
 	await api.get(`/statistics/`).then(res => res.data)
 

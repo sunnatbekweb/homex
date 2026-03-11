@@ -1,6 +1,7 @@
 import {
 	getFaqs,
 	getHeroVideo,
+	getServiceById,
 	getServices,
 	getStatistics,
 	getTestimonials,
@@ -10,7 +11,7 @@ import { IFaq, IService, ITestimonials } from '@/types'
 import { useMutation, useQuery } from '@tanstack/react-query'
 
 export const useGetHeroVideo = () => {
-	return useQuery<{poster: string, video:string}>({
+	return useQuery<{ poster: string; video: string }>({
 		queryKey: ['hero-video'],
 		queryFn: () => getHeroVideo()
 	})
@@ -20,6 +21,13 @@ export const useGetServices = () => {
 	return useQuery<IService[]>({
 		queryKey: ['services'],
 		queryFn: () => getServices()
+	})
+}
+
+export const useGetServiceById = (id: string) => {
+	return useQuery<IService>({
+		queryKey: ['service', id],
+		queryFn: () => getServiceById(id)
 	})
 }
 

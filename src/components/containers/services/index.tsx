@@ -1,11 +1,11 @@
 'use client'
 
 import { ServiceSlide } from '@/components/ui/slide/ServiceSlide'
+import { Link } from '@/config/i18n/routing'
 import { useGetServices } from '@/hooks/api.query'
 import { TLocale } from '@/types'
 import { useLocale } from 'next-intl'
 import Image from 'next/image'
-import { Fragment } from 'react/jsx-runtime'
 
 export const Services = () => {
 	const { data } = useGetServices()
@@ -15,10 +15,14 @@ export const Services = () => {
 			<div className="flex flex-wrap gap-3.75 justify-center mb-7.5">
 				{data?.map((service, index) => {
 					return (
-						<Fragment key={index}>
-							<div className="w-full md:max-w-57.5 lg:max-w-75 xl:max-w-97.5 card">
+						<Link
+							href={`/service/${service?.[`title_${locale}`].toLowerCase().replace(/\s+/g, '-')}/${service.id}`}
+							key={index}
+							className="block"
+						>
+							<div className="w-full h-full md:max-w-57.5 lg:max-w-75 xl:max-w-97.5 card">
 								<div className="flex items-center gap-x-2.5">
-									{service?.icons?.map((item) => (
+									{service?.icons?.map(item => (
 										<div
 											key={item?.id}
 											className="w-9.5 h-9.5 rounded-md bg-primary flex items-center justify-center"
@@ -49,7 +53,7 @@ export const Services = () => {
 									</ul>
 								</div>
 							</div>
-						</Fragment>
+						</Link>
 					)
 				})}
 			</div>
