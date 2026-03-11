@@ -18,7 +18,7 @@ export const Services = () => {
 						<Link
 							href={`/service/${service?.[`title_${locale}`].toLowerCase().replace(/\s+/g, '-')}/${service.id}`}
 							key={index}
-							className="block"
+							className="block w-full md:w-auto"
 						>
 							<div className="w-full h-full md:max-w-57.5 lg:max-w-75 xl:max-w-97.5 card">
 								<div className="flex items-center gap-x-2.5">
