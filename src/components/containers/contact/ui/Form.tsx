@@ -66,10 +66,7 @@ export const Form = () => {
 			onSubmit={handleSubmit(handleFormSubmit)}
 			className={styles.form}
 		>
-			<label
-				htmlFor="name"
-				className={styles.label}
-			>
+			<label className={styles.label}>
 				<span>{t('name_label')}</span>
 				<input
 					type="text"
@@ -100,10 +97,7 @@ export const Form = () => {
 					</label>
 				)}
 			/>
-			<label
-				htmlFor="service"
-				className={`${styles.label} lg:col-span-2`}
-			>
+			<label className={`${styles.label} lg:col-span-2`}>
 				<span>{t('service_label')}</span>
 				<select
 					{...register('service', { required: true })}
@@ -125,10 +119,7 @@ export const Form = () => {
 					))}
 				</select>
 			</label>
-			<label
-				htmlFor="service"
-				className={`${styles.label} lg:col-span-2`}
-			>
+			<label className={`${styles.label} lg:col-span-2`}>
 				<span>{t('file')}</span>
 				<div className="relative group">
 					<Image
@@ -173,10 +164,7 @@ export const Form = () => {
 					))}
 				</div>
 			</label>
-			<label
-				htmlFor="note"
-				className={`${styles.label} lg:col-span-2`}
-			>
+			<label className={`${styles.label} lg:col-span-2`}>
 				<span>{t('note_label')}</span>
 				<textarea
 					{...register('extra_notes', { required: true })}
