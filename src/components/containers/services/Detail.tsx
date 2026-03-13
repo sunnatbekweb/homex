@@ -17,6 +17,11 @@ export const Detail = ({ id }: Params) => {
 		<section>
 			<div className="container">
 				<div className="py-20">
+					<div
+						dangerouslySetInnerHTML={{
+							__html: data?.[`content_${locale}`] || ''
+						}}
+					/>
 					<p className="md:text-lg leading-tight whitespace-pre-line">
 						{data?.[`content_${locale}`]}
 					</p>
