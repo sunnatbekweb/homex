@@ -24,7 +24,10 @@ export async function generateMetadata({
 		'HomeX — uy va ofislar uchun texnik servis xizmati. Uy xizmatlari uchun ishonchli mutaxassislarni bir necha daqiqada chaqiring. Kichik ta’mirlash yoki katta muammo bo‘lishidan qat’i nazar, mutaxassislarimiz sizning ehtiyojlaringizga mos ravishda ishonchli, arzon va o‘z vaqtida yechimlar taqdim etadi.'
 
 	return {
-		title: 'Homex — Uy va ofislar uchun texnik xizmatlar',
+		title: {
+			default: 'Homex — Uy va ofislar uchun texnik xizmatlar',
+			template: ' %s | Homex — Uy va ofislar uchun texnik xizmatlar'
+		},
 		description,
 
 		keywords:
@@ -79,7 +82,7 @@ export default async function RootLayout({
 	params: Promise<{ locale: string }>
 }) {
 	const { locale } = await params
-	const messages = await getMessages({locale: locale})
+	const messages = await getMessages({ locale: locale })
 
 	return (
 		<html lang={locale}>
@@ -92,6 +95,18 @@ export default async function RootLayout({
 						<ToastContainer theme="colored" />
 					</QueryProvider>
 				</NextIntlClientProvider>
+
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							'@context': 'https://schema.org',
+							'@type': 'WebSite',
+							name: 'Homex',
+							url: 'https://homexs.uz'
+						})
+					}}
+				/>
 			</body>
 		</html>
 	)
