@@ -1,7 +1,7 @@
 import { Contact } from '@/components/containers/contact'
 import { Faqs } from '@/components/containers/faqs'
 import { Hero } from '@/components/containers/hero/HomeHero'
-import { Services } from '@/components/containers/services'
+import { Services } from '@/components/containers/services/Main'
 import { Statistics } from '@/components/containers/statistics'
 import { Testimonials } from '@/components/containers/testimonials'
 import { useTranslations } from 'next-intl'
@@ -50,8 +50,8 @@ export default function Home() {
 			</section>
 			<section id="reviews">
 				<div className="container">
-					<div className="py-15 md:py-25 grid grid-cols-1 gap-x-7.5 lg:grid-cols-2 gap-y-10">
-						<div>
+					<div className="py-15 md:py-25 flex flex-col lg:flex-row gap-x-7.5 gap-y-10">
+						<div className="lg:w-[50%] sticky top-25 self-start">
 							<div className="lg:max-w-116">
 								<h2 className="font-medium text-2xl md:text-[2.625rem] leading-none mb-7.5 text-center lg:text-start">
 									{t('reviews.title')}
@@ -61,7 +61,10 @@ export default function Home() {
 								</p>
 							</div>
 						</div>
-						<Testimonials />
+
+						<div className="lg:w-[50%]">
+							<Testimonials />
+						</div>
 					</div>
 				</div>
 			</section>

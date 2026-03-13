@@ -41,11 +41,11 @@ export const ServiceSlide = ({ data }: { data: IService[] }) => {
 					>
 						<div
 							data-fancybox="service_images"
-							data-src={service?.cover_image}
+							data-src={service?.images?.[0]?.image}
 						>
-							{service?.cover_image && (
+							{service?.images?.[0]?.image && (
 								<Image
-									src={service?.cover_image}
+									src={service?.images?.[0]?.image}
 									width={300}
 									height={260}
 									alt={service?.[`title_${locale}`]}

@@ -17,7 +17,7 @@ export const Detail = ({ id }: Params) => {
 		<section>
 			<div className="container">
 				<div className="py-20">
-					<p className="md:text-lg leading-tight">
+					<p className="md:text-lg leading-tight whitespace-pre-line">
 						{data?.[`content_${locale}`]}
 					</p>
 				</div>
