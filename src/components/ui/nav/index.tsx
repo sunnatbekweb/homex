@@ -25,7 +25,7 @@ export const Nav = () => {
 				</li>
 				<li className={styles['nav__list--item']}>
 					<Link
-						href={'/#services'}
+						href={{ pathname: '/', hash: 'services' }}
 						className={`${styles['nav__list--item-link']} ${activeSection === 'services' ? styles.active : ''}`}
 					>
 						{t('services')}
@@ -33,7 +33,7 @@ export const Nav = () => {
 				</li>
 				<li className={styles['nav__list--item']}>
 					<Link
-						href={'/#reviews'}
+						href={{ pathname: '/', hash: 'reviews' }}
 						className={`${styles['nav__list--item-link']} ${activeSection === 'reviews' ? styles.active : ''}`}
 					>
 						{t('reviews')}
@@ -41,7 +41,7 @@ export const Nav = () => {
 				</li>
 				<li className={styles['nav__list--item']}>
 					<Link
-						href={'/#faq'}
+						href={{ pathname: '/', hash: 'faq' }}
 						className={`${styles['nav__list--item-link']} ${activeSection === 'faq' ? styles.active : ''}`}
 					>
 						{t('guarantee')}
@@ -49,7 +49,7 @@ export const Nav = () => {
 				</li>
 				<li className={styles['nav__list--item']}>
 					<Link
-						href={'/#contact'}
+						href={{ pathname: '/', hash: 'contact' }}
 						className={`${styles['nav__list--item-link']} ${activeSection === 'contact' ? styles.active : ''}`}
 					>
 						{t('contact')}

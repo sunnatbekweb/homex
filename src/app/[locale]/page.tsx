@@ -76,7 +76,6 @@ export default function Home() {
 				</div>
 			</section>
 			<Contact id="contact" />
-			{/* <div className="py-5 md:py-10 bg-[#171717]"></div> */}
 		</main>
 	)
 }
