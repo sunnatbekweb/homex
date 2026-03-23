@@ -26,7 +26,7 @@ export const Hero = () => {
 				className="absolute w-full h-full object-cover top-0 left-0 -z-2"
 			></video>
 			<div className="absolute top-0 left-0 w-full h-full bg-black/30 -z-1"></div>
-			<div className="max-w-210 px-4 mx-auto mt-[15%]">
+			<div className="max-w-210 px-4 mx-auto mt-[10%]">
 				<h2 className="font-semibold text-5xl md:text-[56px] leading-none text-center mb-7.5">
 					{t('hero.title')}
 				</h2>
